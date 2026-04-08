@@ -14,9 +14,9 @@ const Navbar = () => {
       path: '/sejarah',
       hasDropdown: true,
       subLinks: [
-        { name: 'Era Keraton', path: '/sejarah#keraton' },
-        { name: 'Masa Kolonial', path: '/sejarah#kolonial' },
-        { name: 'Yogyakarta Modern', path: '/sejarah#modern' },
+        { name: 'Asal Usul', path: '/sejarah#keraton' },
+        { name: 'Tokoh', path: '/sejarah#kolonial' },
+        { name: 'Peristiwa', path: '/sejarah#modern' },
       ]
     },
     { name: 'Budaya', path: '/#budaya' },
@@ -139,18 +139,20 @@ const Navbar = () => {
             title="Pilih Bahasa"
           >
             <svg
-              width="26"
-              height="26"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2.2"
+              strokeWidth="2"
               strokeLinecap="round"
-              className={`transition-transform duration-300 ${isLanguageOpen ? 'rotate-90 text-[#D97736]' : ''}`}
+              strokeLinejoin="round"
+              className={`transition-all duration-300 ${isLanguageOpen ? 'rotate-[30deg] scale-110 text-[#D97736]' : ''}`}
             >
-              <path d="M3 6h18" />
-              <path d="M3 12h18" />
-              <path d="M12 18h9" />
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 2a14.5 14.5 0 0 0 0 20" />
+              <path d="M2 12h20" />
+              <path d="M12 2a14.5 14.5 0 0 1 0 20" />
             </svg>
           </div>
 

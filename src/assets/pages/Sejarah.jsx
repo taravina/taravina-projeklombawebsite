@@ -78,21 +78,18 @@ const Sejarah = () => {
   return (
     <div className="bg-[#FCF9F7]">
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
+      <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden bg-black">
       {/* Background Slideshow */}
       {images.map((img, index) => (
         <div 
           key={img}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out transform ${
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-2000 ease-in-out transform ${
             index === currentIndex 
-              ? 'opacity-100 translate-x-0 scale-100 z-0' 
-              : index < currentIndex 
-                ? 'opacity-0 -translate-x-full scale-100 -z-10' 
-                : 'opacity-0 translate-x-full scale-100 -z-10'
+              ? 'opacity-100 scale-105 z-10' 
+              : 'opacity-0 scale-100 z-0'
           }`}
           style={{ 
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('${img}')`,
-            backgroundAttachment: 'fixed'
+            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('${img}')`
           }}
         ></div>
       ))}
@@ -134,108 +131,96 @@ const Sejarah = () => {
           </h1>
         </div>
 
-        {/* Description Subtext */}
-        <div className="max-w-xl animate-fade-in-up">
-          <p className="font-serif text-sm md:text-base text-gray-200 leading-relaxed opacity-85 drop-shadow-md px-4">
-            Menelusuri sejarah agung melalui Perjanjian Giyanti, sebuah titik balik yang melahirkan peradaban luhur di jantung Pulau Jawa.
-          </p>
-        </div>
       </div>
 
       </section>
 
-      {/* History Exploration Section */}
-      <section id="eksplorasi" className="px-8 md:px-16 py-12 md:py-24 max-w-[1400px] mx-auto">
-        {/* Anchor point for hashes */}
-        <div id="keraton" className="absolute -mt-32"></div>
-        <div id="kolonial" className="absolute -mt-32"></div>
-        <div id="modern" className="absolute -mt-32"></div>
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-          <div className="animate-fade-in">
-            <h2 className="text-[32px] md:text-[40px] font-serif font-bold text-[#5e2b0f] mb-3 leading-tight">
-              Eksplorasi Sejarah
+      {/* Garis Waktu Peradaban (Timeline) */}
+      <section className="bg-[#FCF9F7] py-24 px-8 md:px-16 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Section Header */}
+          <div className="mb-20 animate-fade-in">
+            <div className="w-16 h-1 bg-[#8b6112] mb-8"></div>
+            <h2 className="text-[42px] md:text-[52px] font-serif font-bold text-[#5e2b0f] mb-6 leading-tight">
+              Garis Waktu Peradaban
             </h2>
-            <p className="text-gray-500 text-[15px] md:text-[16px] max-w-lg">
-              Setiap era menyimpan cerita unik yang membentuk identitas Yogyakarta hingga hari ini.
+            <p className="text-gray-500 text-[16px] md:text-[18px] max-w-2xl leading-relaxed opacity-80">
+              Evolusi Kesultanan Ngayogyakarta Hadiningrat dari pusat kekuasaan tradisional menuju Daerah Istimewa yang modern namun tetap memegang teguh akar budayanya.
             </p>
           </div>
 
-          <div className="relative" ref={dropdownRef}>
-            <button 
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-2 text-[#8b6112] font-serif text-[18px] md:text-[20px] font-medium group transition-all duration-300"
-            >
-              <span className="text-gray-400 font-sans font-normal text-[16px]">Era:</span>
-              <span className="font-bold border-b-2 border-transparent group-hover:border-[#8b6112]">{activeFilter}</span>
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+          <div className="relative mt-12">
+            {/* Center Vertical Line */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gray-200 hidden md:block"></div>
 
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-4 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 py-3 z-50 animate-fade-in-up">
-                {filters.map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => {
-                      setActiveFilter(filter);
-                      setIsDropdownOpen(false);
-                    }}
-                    className={`w-full text-left px-6 py-3 text-[15px] transition-colors ${
-                      activeFilter === filter 
-                        ? 'text-[#8b6112] font-bold bg-[#FCF9F7]' 
-                        : 'text-gray-500 hover:text-[#8b6112] hover:bg-gray-50'
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
+            {/* Event 1: 1755 */}
+            <div className="flex flex-col md:flex-row items-center mb-32 relative">
+              <div className="w-full md:w-1/2 pr-0 md:pr-20 text-center md:text-right mb-12 md:mb-0 order-2 md:order-1">
+                <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-100 block mb-2 leading-none">1755</span>
+                <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-4">Perjanjian Giyanti</h3>
+                <p className="text-gray-500 text-[16px] leading-relaxed max-w-lg ml-auto">
+                  Perjanjian ini menandai terbentuknya Kesultanan Yogyakarta sebagai hasil pembagian Kerajaan Mataram. Sejak saat itu, Yogyakarta berkembang menjadi pusat budaya dan pemerintahan yang berpengaruh di Jawa.
+                </p>
               </div>
-            )}
-          </div>
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 animate-fade-in-up">
-          {filteredItems.map((item) => (
-            <div key={item.id} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100/50">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img 
-                  src={item.image} 
-                  alt={item.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-[10px] font-bold text-[#8b6112] uppercase tracking-widest rounded-full shadow-sm">
-                    {item.category}
-                  </span>
+              
+              {/* Timeline Point */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                <div className="w-12 h-12 bg-[#5e2b0f] rounded-lg flex items-center justify-center shadow-lg transform rotate-45">
+                   <div className="transform -rotate-45">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                       <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v10l-3 2v5l-3-2V7H6v12.5A2.5 2.5 0 0 1 3.5 22h14a2.5 2.5 0 0 1 0-5" />
+                     </svg>
+                   </div>
                 </div>
               </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-[22px] font-serif font-bold text-[#5e2b0f] mb-3">
-                  {item.name}
-                </h3>
-                <p className="text-gray-500 text-[14px] leading-relaxed mb-8 flex-grow">
-                  {item.desc}
-                </p>
-                <div className="mt-auto">
-                  <button className="text-[#8b6112] font-black text-[13px] tracking-widest uppercase border-b-2 border-[#8b6112] pb-0.5 hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-all">
-                    PELAJARI LEBIH
-                  </button>
+
+              <div className="w-full md:w-1/2 pl-0 md:pl-20 order-1 md:order-2 mb-8 md:mb-0">
+                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                  <img 
+                    src="/giyanti.png" 
+                    alt="Perjanjian Giyanti" 
+                    className="w-full aspect-[4/3] object-cover"
+                  />
                 </div>
               </div>
             </div>
-          ))}
+
+            {/* Event 2: 1812 */}
+            <div className="flex flex-col md:flex-row items-center mb-12 relative">
+              <div className="w-full md:w-1/2 pr-0 md:pr-20 order-1 md:order-1 mb-8 md:mb-0">
+                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                  <img 
+                    src="/geger.png" 
+                    alt="Geger Sepehi" 
+                    className="w-full aspect-[4/3] object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Timeline Point */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                <div className="w-12 h-12 bg-[#8b6112] rounded-lg flex items-center justify-center shadow-lg transform rotate-45">
+                   <div className="transform -rotate-45">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                     </svg>
+                   </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/2 pl-0 md:pl-20 text-center md:text-left order-2 md:order-2">
+                <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-100 block mb-2 leading-none">1812</span>
+                <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-4">Geger Sepehi</h3>
+                <p className="text-gray-500 text-[16px] leading-relaxed max-w-lg">
+                  Peristiwa penyerangan oleh pasukan Inggris ke Keraton Yogyakarta ini membawa perubahan besar dalam sistem pemerintahan dan memperlemah kekuasaan kerajaan di masa itu.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+
     </div>
   );
 };

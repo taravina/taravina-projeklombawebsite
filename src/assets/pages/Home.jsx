@@ -300,6 +300,103 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Destinasi Wisata Section */}
+      <section className="w-full bg-[#FAF9F6] py-24 px-6 md:px-12">
+        <div className="max-w-[1240px] mx-auto">
+          {/* Header */}
+          <div className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-serif text-[#5e2b0f] mb-2">
+              Destinasi Wisata
+            </h2>
+            <p className="text-[#8b6112] text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">
+              DI LUAR TEMBOK ISTANA
+            </p>
+          </div>
+
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            {/* Left Column: Malioboro (Vertical Big Card) */}
+            <div className="relative group overflow-hidden rounded-2xl h-[500px] lg:h-[700px] shadow-lg">
+              <img 
+                src="/jlmaliboro.png" 
+                alt="Malioboro Quarter" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-8 md:p-12">
+                <div className="inline-block bg-[#8b6112] text-white text-[10px] font-bold px-3 py-1 mb-4 self-start tracking-widest rounded-sm">
+                  CITY CENTER
+                </div>
+                <h3 className="text-white text-3xl md:text-5xl font-serif mb-4">
+                  Malioboro Quarter
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base max-w-md mb-8 leading-relaxed">
+                  The legendary 2km stretch of culture, food, and craft. The vibrant heart that never sleeps.
+                </p>
+                <button className="bg-white text-[#5e2b0f] text-[11px] font-bold px-8 py-3.5 self-start uppercase tracking-widest hover:bg-[#8b6112] hover:text-white transition-all duration-300">
+                  GET DIRECTIONS
+                </button>
+              </div>
+            </div>
+
+            {/* Right Column: Split Layout */}
+            <div className="flex flex-col gap-6">
+              
+              {/* Top: Taman Sari (Horizontal Card) */}
+              <div className="relative group overflow-hidden rounded-2xl h-[240px] lg:h-[338px] shadow-lg">
+                <img 
+                  src="/tamansari.png" 
+                  alt="Taman Sari" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full p-8">
+                  <h3 className="text-white text-2xl md:text-3xl font-serif drop-shadow-md">
+                    Taman Sari
+                  </h3>
+                </div>
+              </div>
+
+              {/* Bottom: Split Squares (Borobudur & Prambanan) */}
+              <div className="grid grid-cols-2 gap-6 h-[240px] lg:h-[338px]">
+                
+                {/* Borobudur */}
+                <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+                  <img 
+                    src="/candiborobudur.png" 
+                    alt="Candi Borobudur" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full p-6">
+                    <h3 className="text-white text-[16px] md:text-xl font-serif drop-shadow-md">
+                      Candi Borobudur
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Prambanan */}
+                <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+                  <img 
+                    src="/candiprambanan.png" 
+                    alt="Candi Prambanan" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full p-6">
+                    <h3 className="text-white text-[16px] md:text-xl font-serif drop-shadow-md">
+                      Candi Prambanan
+                    </h3>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </>
   );
 };
