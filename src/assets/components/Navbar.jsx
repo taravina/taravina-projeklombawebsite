@@ -19,7 +19,7 @@ const Navbar = () => {
         { name: 'Peristiwa', path: '/sejarah#modern' },
       ]
     },
-    { name: 'Budaya', path: '/#budaya' },
+    { name: 'Budaya', path: '/budaya' },
     { 
       name: 'Kuliner', 
       path: '/kuliner',
@@ -30,19 +30,12 @@ const Navbar = () => {
         { name: 'Resep Warisan', path: '/kuliner#bakpia' },
       ]
     },
-    { name: 'Destinasi', path: '/#destinasi' },
+    { name: 'Destinasi', path: '/destinasi' },
     { name: 'Smart City', path: '/#smart-city' },
   ];
 
   const languages = [
-    'Bahasa Belanda',
-    'Bahasa Jerman',
-    'Bahasa Prancis',
-    'Bahasa Inggris',
-    'Bahasa Melayu',
-    'Bahasa Jepang',
-    'Bahasa Korea',
-    'Bahasa Mandarin'
+    'Bahasa Inggris'
   ];
 
   // Close language dropdown when clicking outside

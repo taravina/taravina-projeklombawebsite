@@ -31,20 +31,6 @@ const Home = () => {
               melalui sentuhan digital modern, mulai dari pelestarian sejarah
               hingga inovasi kota pintar.
             </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="bg-[#8b6112] hover:bg-[#6b4a0e] text-white px-7 py-3.5 text-xs md:text-sm font-bold tracking-widest uppercase flex items-center gap-2 transition-colors">
-                Jelajahi Kota
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </button>
-              <button className="bg-transparent border border-gray-400 hover:border-white text-gray-200 hover:text-white px-7 py-3.5 text-xs md:text-sm font-bold tracking-widest uppercase transition-colors">
-                Virtual Tour
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -120,6 +106,9 @@ const Home = () => {
             <h2 className="text-3xl lg:text-[42px] font-serif text-[#5e2b0f] mb-6">
               Budaya &amp; Tradisi
             </h2>
+            <Link to="/budaya" className="text-[#8b6112] text-xs font-bold tracking-widest uppercase border-b-[1.5px] border-[#8b6112] pb-1 hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-colors whitespace-nowrap inline-block mb-10">
+              Jelajahi Budaya Mataram &rarr;
+            </Link>
             <p className="text-gray-500 text-[15px] max-w-2xl mx-auto leading-relaxed">
               Melampaui bayang-bayang Wayang, Yogyakarta bernapas dalam tradisi hidup yang 
               diwariskan selama berabad-abad melalui komunitas dan ritual.

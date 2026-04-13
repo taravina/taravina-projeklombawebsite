@@ -129,118 +129,95 @@ const Kuliner = () => {
       </section>
 
       {/* Ikon Kuliner Section */}
-      <section className="px-8 md:px-16 py-12 md:py-20 bg-[#FAF9F6]">
+      <section className="px-8 md:px-16 py-12 md:py-24 bg-[#FAF9F6]">
         <div className="max-w-[1400px] mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-            <div>
-              <h2 className="text-[40px] md:text-[48px] font-serif font-bold text-[#5e2b0f] mb-2 leading-tight">
-                Ikon Kuliner
-              </h2>
-              <p className="text-gray-500 text-[16px] md:text-[18px]">
-                Sajian legendaris yang mendefinisikan identitas kota.
-              </p>
-            </div>
-            <div className="relative" ref={dropdownRef}>
-              <button 
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-2 transition-all duration-300"
-              >
-                <span className="text-[#8B6112] font-sans font-normal text-[16px]">Urutkan:</span>
-                <span className="text-[#5E2B0F] font-bold text-[16px]">{activeFilter}</span>
-                <svg 
-                  className={`w-4 h-4 text-[#5E2B0F] transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Dropdown Menu */}
-              {isDropdownOpen && (
-                <div className="absolute right-0 mt-3 w-44 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-100 py-2 z-50 animate-fade-in-up">
-                  {filters.map((filter) => (
-                    <button
-                      key={filter}
-                      onClick={() => {
-                        setActiveFilter(filter);
-                        setIsDropdownOpen(false);
-                      }}
-                      className={`w-full text-left px-6 py-2.5 text-[15px] transition-colors ${
-                        activeFilter === filter 
-                          ? 'text-[#8b6112] font-semibold bg-[#FCF9F7]' 
-                          : 'text-[#4A5568] hover:text-[#8b6112] hover:bg-gray-50'
-                      }`}
-                    >
-                      {filter}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+          <div className="text-center mb-20">
+            <h2 className="text-[40px] md:text-[56px] font-serif font-bold text-[#5e2b0f] mb-4 leading-tight">
+              Ikon Kuliner Yogyakarta
+            </h2>
+            <p className="text-gray-500 text-[16px] md:text-[18px] max-w-2xl mx-auto">
+              Menelusuri jejak rasa yang telah bertahan lintas generasi, menceritakan sejarah dan kearifan lokal dalam setiap gigitan.
+            </p>
           </div>
 
-          {/* Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10">
-            {/* Featured Item: Gudeg Yu Djum */}
-            <div className="lg:col-span-2 group">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100/50">
-                <div className="relative aspect-[16/9] lg:aspect-auto lg:h-[480px] overflow-hidden">
-                  <img 
-                    src="/gudeg.png" 
-                    alt="Gudeg Yu Djum" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-8 md:p-10">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-1">
-                        Gudeg Yu Djum
-                      </h3>
-                      <p className="text-[#8b6112] text-[12px] md:text-[13px] font-bold tracking-widest uppercase">
-                        THE LEGENDARY JACKFRUIT STEW
-                      </p>
-                    </div>
-                    {/* Badge Icon */}
-                    <div className="text-[#8b6112] p-2 bg-[#FCF9F7] rounded-full">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <p className="text-gray-500 text-[15px] md:text-[16px] leading-relaxed mb-10 max-w-2xl">
-                    Dimasak perlahan selama puluhan jam dengan kayu bakar, menciptakan cita rasa manis yang meresap hingga ke sanubari. Sebuah mahakarya dari dapur Wijilan yang bertahan sejak 1951.
-                  </p>
-                  <button className="text-[#8b6112] font-black text-[13px] tracking-widest uppercase border-b-2 border-[#8b6112] pb-0.5 hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-all">
-                    LIHAT DETAIL
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Other Items */}
-            {filteredItems.map((item) => (
-              <div key={item.id} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100/50">
+          {/* 3x3 Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
+            {[
+              {
+                id: 'klatak',
+                name: 'Sate Klatak',
+                image: '/sate.png',
+                desc: 'Keunikan jeruji besi sepeda sebagai tusuk sate yang menghantarkan panas sempurna ke jantung daging domba muda.'
+              },
+              {
+                id: 'kopi',
+                name: 'Kopi Joss',
+                image: '/kopi.png',
+                desc: 'Simbol kehangatan malam di sekitar Stasiun Tugu. Arang membara yang dicelupkan ke dalam kopi pekat bukan sekadar atraksi.'
+              },
+              {
+                id: 'oseng',
+                name: 'Oseng Mercon',
+                image: '/oseng.png',
+                desc: "Hidangan pedas dengan potongan daging sapi dan cabai melimpah. Sensasi pedasnya yang 'meledak' membuatnya favorit."
+              },
+              {
+                id: 'jadah',
+                name: 'Jadah Tempe',
+                image: '/kuliner_jadah.png',
+                desc: 'Perpaduan jadah yang lembut dan tempe bacem yang manis gurih. Teksturnya unik dengan rasa tradisional daerah pegunungan.'
+              },
+              {
+                id: 'ronde',
+                name: 'Wedang Ronde',
+                image: '/kuliner_ronde.png',
+                desc: 'Minuman hangat dengan bola-bola ketan berisi kacang, disajikan dalam kuah jahe yang menghangatkan tubuh di malam hari.'
+              },
+              {
+                id: 'mi-jawa',
+                name: 'Bak Mie Jawa',
+                image: '/kuliner_mie_jawa.png',
+                desc: 'Mie kuning dan bihun yang dimasak dengan kaldu ayam kampung kental, telur bebek, dan aroma khas dari anglo kayu bakar.'
+              },
+              {
+                id: 'gudeg',
+                name: 'Gudeg Yu Djum',
+                image: '/gudeg.png',
+                desc: 'Mahakarya kuliner Jogja dari nangka muda yang dimasak berjam-jam dengan santan dan gula jawa, menciptakan rasa manis yang melegenda.'
+              },
+              {
+                id: 'bakpia',
+                name: 'Bakpia Pathok',
+                image: '/bakpia.png',
+                desc: 'Kue bulat berisi kacang hijau yang menjadi oleh-oleh wajib. Perpaduan sempurna antara kulit yang renyah dan isi yang lembut.'
+              },
+              {
+                id: 'kalasan',
+                name: 'Ayam Kalasan',
+                image: '/kuliner_ayam_kalasan.png',
+                desc: 'Ayam goreng bumbu manis khas Kalasan dengan tekstur daging yang empuk dan kremesan yang renyah menggugah selera.'
+              }
+            ].map((item) => (
+              <div key={item.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full border border-gray-100/30 group">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={item.image} 
                     alt={item.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-[22px] font-serif font-bold text-[#5e2b0f] mb-3">
+                <div className="p-8 md:p-10 flex flex-col flex-grow">
+                  <h3 className="text-[24px] font-serif font-bold text-[#5e2b0f] mb-4 group-hover:text-[#8b6112] transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-gray-500 text-[14px] leading-relaxed mb-8 flex-grow line-clamp-3 md:line-clamp-none">
+                  <p className="text-gray-500 text-[15px] leading-relaxed mb-8 flex-grow">
                     {item.desc}
                   </p>
-                  <div className="mt-auto">
-                    <button className="text-[#8b6112] font-black text-[13px] tracking-widest uppercase border-b-2 border-[#8b6112] pb-0.5 hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-all">
-                      LIHAT DETAIL
+                  <div className="mt-auto pt-6 border-t border-gray-50">
+                    <button className="text-[#8b6112] font-bold text-[13px] tracking-widest uppercase flex items-center gap-2 hover:gap-3 transition-all">
+                      PELAJARI LEBIH LANJUT <span>→</span>
                     </button>
                   </div>
                 </div>
@@ -249,6 +226,65 @@ const Kuliner = () => {
           </div>
         </div>
       </section>
+      {/* Heritage Recipe Card Section */}
+      <section className="px-8 md:px-16 py-12 md:py-20">
+        <div className="max-w-[1240px] mx-auto overflow-hidden rounded-[32px] bg-[#5E2B0F] shadow-2xl flex flex-col lg:flex-row relative group">
+          {/* Left Content */}
+          <div className="p-10 md:p-16 lg:w-1/2 text-white flex flex-col justify-center">
+            <h2 className="text-[32px] md:text-[44px] font-serif font-bold mb-6 leading-tight">
+              Resep Warisan &<br />Panduan Digital
+            </h2>
+            <p className="text-gray-300 text-[16px] md:text-[18px] leading-relaxed mb-10 max-w-md">
+              Pelajari rahasia bumbu dasar 'Jangkep' dan teknik memasak lambat yang telah dijaga selama berabad-abad oleh para abdi dalem keraton.
+            </p>
+            <div>
+              <button className="inline-flex items-center gap-4 px-8 py-5 bg-[#8B6112] hover:bg-[#765210] text-[#FCF9F7] font-serif text-[18px] transition-all duration-300 shadow-lg">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Buka Digital Menu Guide
+              </button>
+            </div>
+          </div>
+          {/* Right Illustration */}
+          <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full overflow-hidden">
+            <img 
+              src="/kuliner_resep_heritage.png" 
+              alt="Heritage Recipe Illustration" 
+              className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
+            />
+            {/* Subtle overlay */}
+            <div className="absolute inset-0 bg-black/10"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Filosofi Saji Section */}
+      <section className="px-8 md:px-16 py-20 md:py-32 bg-white text-center">
+        <div className="max-w-3xl mx-auto">
+          {/* Temple Icon */}
+          <div className="flex justify-center mb-8">
+            <svg className="w-12 h-12 text-[#8b6112]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L4 6v2h16V6l-8-4zM4 9v2h16V9H4zm0 3v9h2v-9H4zm4 0v9h2v-9H8zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2zm4 0v9h2v-9h-2z" />
+            </svg>
+          </div>
+          
+          <h2 className="text-[32px] md:text-[44px] font-serif font-bold text-[#5e2b0f] mb-6">
+            Filosofi Saji: Nasi Berkat & Kebersamaan
+          </h2>
+          
+          <div className="w-24 h-1 bg-[#8b6112] mx-auto mb-12"></div>
+          
+          <p className="text-[#5e2b0f] text-[20px] md:text-[24px] font-serif italic leading-relaxed mb-10 text-gray-700">
+            "Dalam setiap suapan Nasi Berkat, terkandung doa bagi kesejahteraan bersama. Makan bukan sekadar memuaskan lapar, melainkan bentuk syukur komunal yang menyatukan hati."
+          </p>
+          
+          <p className="text-gray-500 text-[16px] md:text-[18px] leading-relaxed max-w-2xl mx-auto">
+            Tradisi kuliner Yogyakarta sangat kental dengan nilai-nilai spiritual. Dari gunungan saat Grebeg hingga tumpengan sederhana di gang-gang sempit, makanan adalah jembatan antara manusia, alam, dan Sang Pencipta.
+          </p>
+        </div>
+      </section>
+
     </div>
   );
 };
