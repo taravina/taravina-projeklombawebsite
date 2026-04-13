@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -96,11 +97,11 @@ const Home = () => {
             <div className="flex items-center gap-16 md:gap-20">
               <div>
                 <h3 className="text-[#643110] font-bold text-[17px] mb-1">Keraton</h3>
-                <p className="text-gray-400 text-[10px] font-semibold tracking-widest uppercase">Cultural Pulse</p>
+                <p className="text-gray-600 text-[10px] font-semibold tracking-widest uppercase">Denyut Budaya</p>
               </div>
               <div>
-                <h3 className="text-[#643110] font-bold text-[17px] mb-1">Independence</h3>
-                <p className="text-gray-400 text-[10px] font-semibold tracking-widest uppercase">Special Region</p>
+                <h3 className="text-[#643110] font-bold text-[17px] mb-1">Kemerdekaan</h3>
+                <p className="text-gray-600 text-[10px] font-semibold tracking-widest uppercase">Daerah Istimewa</p>
               </div>
             </div>
           </div>
@@ -129,60 +130,60 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Card 1 */}
-            <div className="bg-[#d2cbc6] p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className="bg-[#8b6914] p-3 rounded-xl shadow-md hover:shadow-lg transition-all flex flex-col h-full">
               <img 
                 src="gamelan.png" 
                 alt="Gamelan Orchestra" 
-                className="w-full h-[360px] object-cover rounded-[10px] mb-3"
+                className="w-full h-[280px] md:h-[320px] object-cover rounded-lg mb-4"
               />
               <div className="px-1 pb-2 flex-grow">
-                <h3 className="font-serif font-bold text-[#6e3919] text-[20px] mb-1.5">Gamelan Orchestra</h3>
-                <p className="text-[#65605d] text-[12.5px] leading-snug">
+                <h3 className="font-serif font-normal text-[#fdf6e4] text-[20px] mb-1.5">Gamelan Orchestra</h3>
+                <p className="text-white/90 text-[12.5px] leading-relaxed">
                   *Presisi matematis dari tabuhan perunggu yang menggema dari keraton hingga ke pelosok desa.
                 </p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#d2cbc6] p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className="bg-[#8b6914] p-3 rounded-xl shadow-md hover:shadow-lg transition-all flex flex-col h-full">
               <img 
                 src="Sekaten.png" 
                 alt="Sekaten Ceremony" 
-                className="w-full h-[360px] object-cover rounded-[10px] mb-3"
+                className="w-full h-[280px] md:h-[320px] object-cover rounded-lg mb-4"
               />
               <div className="px-1 pb-2 flex-grow">
-                <h3 className="font-serif font-bold text-[#6e3919] text-[20px] mb-1.5">Sekaten Ceremony</h3>
-                <p className="text-[#65605d] text-[12.5px] leading-snug">
+                <h3 className="font-serif font-normal text-[#fdf6e4] text-[20px] mb-1.5">Sekaten Ceremony</h3>
+                <p className="text-white/90 text-[12.5px] leading-relaxed">
                   Perayaan kerajaan tahunan untuk memperingati kelahiran Nabi Muhammad melalui alunan sakral Gamelan Sekaten.
                 </p>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-[#d2cbc6] p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className="bg-[#8b6914] p-3 rounded-xl shadow-md hover:shadow-lg transition-all flex flex-col h-full">
               <img 
                 src="batiksogan.png" 
                 alt="Sogan Batik" 
-                className="w-full h-[360px] object-cover rounded-[10px] mb-3"
+                className="w-full h-[280px] md:h-[320px] object-cover rounded-lg mb-4"
               />
               <div className="px-1 pb-2 flex-grow">
-                <h3 className="font-serif font-bold text-[#6e3919] text-[20px] mb-1.5">Sogan Batik</h3>
-                <p className="text-[#65605d] text-[12.5px] leading-snug">
+                <h3 className="font-serif font-normal text-[#fdf6e4] text-[20px] mb-1.5">Sogan Batik</h3>
+                <p className="text-white/90 text-[12.5px] leading-relaxed">
                   Makna dalam setiap goresan. Seni batik dengan teknik lilin tradisional yang menggambarkan kesabaran dan ketekunan orang Jawa.
                 </p>
               </div>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-[#d2cbc6] p-3 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div className="bg-[#8b6914] p-3 rounded-xl shadow-md hover:shadow-lg transition-all flex flex-col h-full">
               <img 
                 src="wayang.png" 
                 alt="Wayang Kulit" 
-                className="w-full h-[360px] object-cover rounded-[10px] mb-3"
+                className="w-full h-[280px] md:h-[320px] object-cover rounded-lg mb-4"
               />
               <div className="px-1 pb-2 flex-grow">
-                <h3 className="font-serif font-bold text-[#6e3919] text-[20px] mb-1.5">Wayang Kulit</h3>
-                <p className="text-[#65605d] text-[12.5px] leading-snug">
+                <h3 className="font-serif font-normal text-[#fdf6e4] text-[20px] mb-1.5">Wayang Kulit</h3>
+                <p className="text-white/90 text-[12.5px] leading-relaxed">
                   Seni wayang yang mengisahkan pertarungan abadi antara baik dan buruk lewat permainan cahaya dan siluet.
                 </p>
               </div>
@@ -209,9 +210,9 @@ const Home = () => {
                 dan hidangan tradisionalnya.
               </p>
             </div>
-            <a href="#menu" className="text-[#8b6112] text-xs font-bold tracking-widest uppercase border-b-[1.5px] border-[#8b6112] pb-1 hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-colors whitespace-nowrap mb-2 md:mb-0">
+            <Link to="/kuliner" className="text-[#8b6112] text-xs font-bold tracking-widest uppercase border-b-[1.5px] border-[#8b6112] pb-1 hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-colors whitespace-nowrap mb-2 md:mb-0">
               Digital Menu Guide &rarr;
-            </a>
+            </Link>
           </div>
 
           {/* Cards Grid */}
@@ -229,10 +230,9 @@ const Home = () => {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h3 className="font-serif font-bold text-[#5e2b0f] text-[22px] mb-3">Gudeg Pakdhe WAGYU</h3>
+                <h3 className="font-serif font-bold text-[#5e2b0f] text-[22px] mb-3">Gudeg</h3>
                 <p className="text-[#807b77] text-[13px] leading-[1.6] mb-8">
-                  The iconic sweet jackfruit stew, slow-cooked for hours with coconut milk 
-                  and<br />secret spices. A must-try legend.
+                  Rebusan nangka manis yang ikonik, dimasak perlahan selama berjam-jam dengan santan dan bumbu rahasia.
                 </p>
               </div>
               <div className="flex items-center gap-1.5 text-[#8b6112] text-[10px] font-bold tracking-wider uppercase mt-auto">
@@ -240,7 +240,7 @@ const Home = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                TANGGUL WETAN
+                PUSAT WIJILAN
               </div>
             </div>
 
@@ -257,9 +257,9 @@ const Home = () => {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h3 className="font-serif font-bold text-[#5e2b0f] text-[22px] mb-3">Bakpia mbak tara</h3>
+                <h3 className="font-serif font-bold text-[#5e2b0f] text-[22px] mb-3">Bakpia pathok</h3>
                 <p className="text-[#807b77] text-[13px] leading-[1.6] mb-8">
-                  Sweet mung bean-filled pastry that has become the signature souvenir of the city since 1948.
+                  Kue isi kacang hijau manis yang telah menjadi oleh-oleh khas kota tersebut sejak tahun 1948.
                 </p>
               </div>
               <div className="flex items-center gap-1.5 text-[#8b6112] text-[10px] font-bold tracking-wider uppercase mt-auto">
@@ -267,7 +267,7 @@ const Home = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                PATHOK DISTRICT
+                PUSAT BAKPIA PATHOK WIJILAN
               </div>
             </div>
 
@@ -283,7 +283,7 @@ const Home = () => {
                 </svg>
               </div>
               <div className="flex-grow">
-                <h3 className="font-serif font-bold text-[#5e2b0f] text-[22px] mb-3">Sate mbak ayu</h3>
+                <h3 className="font-serif font-bold text-[#5e2b0f] text-[22px] mb-3">Sate klathak</h3>
                 <p className="text-[#807b77] text-[13px] leading-[1.6] mb-8">
                   Mutton skewers grilled using iron spokes instead of bamboo, seasoned only with salt for pure flavor.
                 </p>
@@ -293,7 +293,7 @@ const Home = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                JEJERAN, BANT3L
+                AREA IMOGIRI (SENTRA SATE KLATAK)
               </div>
             </div>
 
