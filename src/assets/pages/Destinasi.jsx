@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from "../../context/LanguageContext";
 
 const Destinasi = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
       {/* Hero Section */}
@@ -19,18 +22,16 @@ const Destinasi = () => {
         <div className="relative z-10 max-w-[1400px] mx-auto w-full">
           <div className="max-w-3xl">
             <p className="text-[#D97736] text-[12px] md:text-[14px] font-bold tracking-[0.3em] uppercase mb-6 animate-fade-in">
-              EST. 1755
+              {t('destinasiPage.hero.badge')}
             </p>
             <h1 className="text-white text-[56px] md:text-[84px] lg:text-[100px] font-serif leading-[1.1] mb-8 animate-slide-up">
-              Jejak Langkah di<br />
-              <span className="italic">Tanah Mataram</span>
+              {t('destinasiPage.hero.title')}
             </h1>
             <p className="text-gray-200 text-[18px] md:text-[20px] max-w-xl leading-relaxed mb-12 animate-fade-in-delayed">
-              Menelusuri nafas spiritual dan budaya di pusat peradaban Jawa. 
-              Selamat datang di jiwa Nusantara.
+              {t('destinasiPage.hero.desc')}
             </p>
             <button className="px-10 py-5 bg-[#5E2B0F] hover:bg-[#4A220C] text-white font-serif text-[18px] tracking-widest uppercase transition-all duration-300 shadow-xl hover:shadow-2xl animate-fade-in-delayed">
-              MULAI PENJELAJAHAN
+              {t('destinasiPage.hero.button')}
             </button>
           </div>
         </div>
@@ -48,20 +49,19 @@ const Destinasi = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div className="max-w-xl">
               <h2 className="text-[40px] md:text-[52px] font-serif text-[#5E2B0F] leading-tight mb-6">
-                Destinasi Ikonik Yogyakarta
+                {t('destinasiPage.intro.title')}
               </h2>
               <p className="text-gray-500 text-[18px] leading-relaxed">
-                Dari kemegahan candi-candi kuno hingga kesejukan alam pegunungan, 
-                Yogyakarta menawarkan perjalanan spiritual yang tak terlupakan.
+                {t('destinasiPage.intro.desc')}
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { title: "Candi Prambanan", cat: "Situs Budaya", img: "https://images.unsplash.com/photo-1596402184320-417d7178b2cd?auto=format&fit=crop&q=80&w=800" },
-              { title: "Keraton Yogyakarta", cat: "Istana Raja", img: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=800" },
-              { title: "Pantai Parangtritis", cat: "Wisata Alam", img: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=800" }
+              { title: t('destinasiPage.items.prambanan'), cat: t('destinasiPage.items.prambananCat'), img: "https://images.unsplash.com/photo-1596402184320-417d7178b2cd?auto=format&fit=crop&q=80&w=800" },
+              { title: t('destinasiPage.items.keraton'), cat: t('destinasiPage.items.keratonCat'), img: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=800" },
+              { title: t('destinasiPage.items.parangtritis'), cat: t('destinasiPage.items.parangtritisCat'), img: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=800" }
             ].map((item, idx) => (
               <div key={idx} className="group cursor-pointer overflow-hidden rounded-2xl relative aspect-[3/4]">
                 <img src={item.img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={item.title} />

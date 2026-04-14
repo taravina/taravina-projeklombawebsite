@@ -1,66 +1,46 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const languageRef = useRef(null);
+  const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
   const links = [
-    { name: 'Beranda', path: '/' },
+    { name: t('navbar.beranda'), path: '/' },
     { 
-      name: 'Sejarah', 
+      name: t('navbar.sejarah.title'), 
       path: '/sejarah',
       hasDropdown: true,
       subLinks: [
-        { name: 'Asal Usul', path: '/sejarah#keraton' },
-        { name: 'Tokoh', path: '/sejarah#kolonial' },
-        { name: 'Peristiwa', path: '/sejarah#modern' },
+        { name: t('navbar.sejarah.asal'), path: '/sejarah#keraton' },
+        { name: t('navbar.sejarah.tokoh'), path: '/sejarah#kolonial' },
+        { name: t('navbar.sejarah.peristiwa'), path: '/sejarah#modern' },
       ]
     },
-    { name: 'Budaya', path: '/budaya' },
+    { name: t('navbar.budaya'), path: '/budaya' },
     { 
-      name: 'Kuliner', 
+      name: t('navbar.kuliner.title'), 
       path: '/kuliner',
       hasDropdown: true,
       subLinks: [
-        { name: 'Filosofi Saji', path: '/kuliner#filosofi' },
-        { name: 'Menu Legendaris', path: '/kuliner#gudeg' },
-        { name: 'Resep Warisan', path: '/kuliner#bakpia' },
+        { name: t('navbar.kuliner.filosofi'), path: '/kuliner#filosofi' },
+        { name: t('navbar.kuliner.menu'), path: '/kuliner#gudeg' },
+        { name: t('navbar.kuliner.resep'), path: '/kuliner#bakpia' },
       ]
     },
-    { name: 'Destinasi', path: '/destinasi' },
-    { name: 'Smart City', path: '/#smart-city' },
+    { name: t('navbar.destinasi'), path: '/destinasi' },
+    { name: t('navbar.smartCity'), path: '/smart-city' },
   ];
-
-  const languages = [
-    'Bahasa Inggris'
-  ];
-
-  // Close language dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (languageRef.current && !languageRef.current.contains(event.target)) {
-        setIsLanguageOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   const isLinkActive = (path) => {
-    // Exact match for Home
     if (path === '/') return location.pathname === '/' && location.hash === '';
-    
-    // Check for hash matches on same page
     if (path.includes('#')) {
       const [p, h] = path.split('#');
       const targetPath = p === '' ? '/' : p;
       return location.pathname === targetPath && location.hash === `#${h}`;
     }
-    
-    // Normal separate page match
     return location.pathname === path;
   };
 
@@ -72,7 +52,7 @@ const Navbar = () => {
           to="/" 
           className="text-2xl md:text-[28px] font-serif font-bold text-[#7A3E14] hover:text-[#5e2b0f] transition-all duration-300"
         >
-          Kota Yogyakarta
+          {t('navbar.brand')}
         </NavLink>
 
         {/* Navigation Links */}
@@ -95,11 +75,9 @@ const Navbar = () => {
                   }`}
                 >
                   {link.name}
-                  {/* Subtle underline animation overlay */}
                   <span className={`absolute bottom-0 left-0 h-[2px] bg-[#D97736] transition-all duration-500 transform ${active ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                 </NavLink>
 
-                {/* Enhanced Dropdown Menu */}
                 {link.hasDropdown && (
                   <div 
                     className={`absolute left-0 top-full pt-4 transition-all duration-300 transform ${
@@ -124,49 +102,36 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Action Icon / Language Dropdown */}
-        <div className="relative" ref={languageRef}>
+        {/* Language Switcher */}
+        <div className="relative flex bg-gray-100/90 backdrop-blur-md p-1 rounded-full items-center shadow-inner border border-gray-200/50 scale-90 md:scale-100 overflow-hidden w-[280px]">
+          {/* Sliding Pill Background using Translate for absolute precision */}
           <div 
-            onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-            className="cursor-pointer text-gray-800 hover:text-[#D97736] transition-all duration-300 flex items-center justify-center p-2" 
-            title="Pilih Bahasa"
+            className={`absolute top-1 bottom-1 w-[calc(50%-4px)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] bg-[#7A3E14] rounded-full shadow-lg ${
+              language === 'ID' ? 'translate-x-0' : 'translate-x-full'
+            }`}
+            style={{ 
+              left: '4px',
+              width: 'calc(50% - 4px)' 
+            }}
+          />
+          
+          <button 
+            onClick={() => setLanguage('ID')}
+            className={`relative z-10 py-2.5 text-[11px] font-bold tracking-wider transition-colors duration-500 flex-1 text-center whitespace-nowrap ${
+              language === 'ID' ? 'text-white' : 'text-gray-500 hover:text-[#7A3E14]'
+            }`}
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`transition-all duration-300 ${isLanguageOpen ? 'rotate-[30deg] scale-110 text-[#D97736]' : ''}`}
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 2a14.5 14.5 0 0 0 0 20" />
-              <path d="M2 12h20" />
-              <path d="M12 2a14.5 14.5 0 0 1 0 20" />
-            </svg>
-          </div>
-
-          {/* Language Dropdown Menu */}
-          {isLanguageOpen && (
-            <div className="absolute right-0 mt-4 w-56 bg-white shadow-2xl rounded-xl py-4 border border-gray-100 z-[60] animate-fade-in-up">
-              <div className="px-6 pb-2 mb-2 border-b border-gray-50">
-                <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Pilih Bahasa</span>
-              </div>
-              {languages.map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => setIsLanguageOpen(false)}
-                  className="w-full text-left px-6 py-3 text-[14px] text-gray-600 hover:bg-[#FAF9F6] hover:text-[#D97736] transition-colors flex items-center justify-between group"
-                >
-                  <span>{lang}</span>
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#D97736] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </button>
-              ))}
-            </div>
-          )}
+            BAHASA INDONESIA
+          </button>
+          
+          <button 
+            onClick={() => setLanguage('EN')}
+            className={`relative z-10 py-2.5 text-[11px] font-bold tracking-wider transition-colors duration-500 flex-1 text-center whitespace-nowrap ${
+              language === 'EN' ? 'text-white' : 'text-gray-500 hover:text-[#7A3E14]'
+            }`}
+          >
+            ENGLISH
+          </button>
         </div>
       </div>
     </nav>
