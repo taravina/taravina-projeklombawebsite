@@ -15,20 +15,14 @@ const Navbar = () => {
       hasDropdown: true,
       subLinks: [
         { name: t('navbar.sejarah.asal'), path: '/sejarah#keraton' },
-        { name: t('navbar.sejarah.tokoh'), path: '/sejarah#kolonial' },
-        { name: t('navbar.sejarah.peristiwa'), path: '/sejarah#modern' },
+        { name: t('navbar.sejarah.tokoh'), path: '/tokoh' },
+        { name: t('navbar.sejarah.peristiwa'), path: '/peristiwa' },
       ]
     },
     { name: t('navbar.budaya'), path: '/budaya' },
     { 
       name: t('navbar.kuliner.title'), 
-      path: '/kuliner',
-      hasDropdown: true,
-      subLinks: [
-        { name: t('navbar.kuliner.filosofi'), path: '/kuliner#filosofi' },
-        { name: t('navbar.kuliner.menu'), path: '/kuliner#gudeg' },
-        { name: t('navbar.kuliner.resep'), path: '/kuliner#bakpia' },
-      ]
+      path: '/kuliner'
     },
     { name: t('navbar.destinasi'), path: '/destinasi' },
     { name: t('navbar.smartCity'), path: '/smart-city' },

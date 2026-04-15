@@ -13,6 +13,10 @@ import Contact from "./assets/pages/Contact";
 import SmartCity from "./assets/pages/SmartCity";
 import MenuResep from "./assets/pages/MenuResep";
 
+import Tokoh from "./assets/pages/Tokoh";
+import Peristiwa from "./assets/pages/Peristiwa";
+import DestinasiDetail from "./assets/pages/DestinasiDetail";
+
 const AppContent = () => {
   const { language } = useLanguage();
 
@@ -23,8 +27,11 @@ const AppContent = () => {
         <Route path="/" element={<Home />} />
         <Route path="/kuliner" element={<Kuliner />} />
         <Route path="/sejarah" element={<Sejarah />} />
+        <Route path="/tokoh" element={<Tokoh />} />
+        <Route path="/peristiwa" element={<Peristiwa />} />
         <Route path="/budaya" element={<Budaya />} />
         <Route path="/destinasi" element={<Destinasi />} />
+        <Route path="/destinasi/:slug" element={<DestinasiDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/smart-city" element={<SmartCity />} />
