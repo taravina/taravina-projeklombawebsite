@@ -508,12 +508,120 @@ export const translations = {
         popular: "Menu Terlaris"
       },
       recipes: [
-        { id: 1, name: 'Gudeg Yu Djum', desc: 'Dimasak perlahan selama puluhan jam dengan kayu bakar, menciptakan cita rasa manis yang meresap hingga ke sanubari.', category: 'Terlaris' },
-        { id: 2, name: 'Bakpia Pathok', desc: 'Akulturasi budaya Tionghoa dan Jawa yang melahirkan kudapan ikonik dengan isi kacang hijau yang lembut.', category: 'Semua' },
-        { id: 3, name: 'Sate Klatak', desc: 'Keunikan jeruji besi sepeda sebagai tusuk sate yang menghantarkan panas sempurna ke jantung daging domba muda.', category: 'Terlaris' },
+        { id: 1, name: 'Gudeg Yu Djum', desc: 'Dimasak perlahan selama puluhan jam dengan kayu bakar, menciptakan cita rasa manis yang meresap hingga ke sanubari.', category: 'Terlaris', 
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Gudeg Yu Djum: Legenda Rasa dari Wijilan",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Sejak tahun 1951, Yu Djum (Ibu Djuwariyah) merintis dapur di Jalan Wijilan. Rahasia kelezatannya terletak pada penggunaan \"Besek\" (anyaman bambu) dan proses memasak menggunakan kayu bakar selama lebih dari 24 jam. Teknik ini memberikan aroma asap yang khas dan tekstur nangka muda yang sangat lembut namun tidak hancur.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Nangka Muda (Gori)",
+              "Santan Kental",
+              "Gula Kelapa Asli",
+              "Krecek (Kulit Sapi)",
+              "Telur Pindang",
+              "Ayam Kampung"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Pusat Wijilan", address: "Jl. Wijilan No.167, Panembahan, Kraton, Yogyakarta" },
+              { name: "Sentral Dagen", address: "Jl. Dagen No.2C, Sosromenduran, Gedong Tengen, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 2, name: 'Bakpia Pathok', desc: 'Akulturasi budaya Tionghoa dan Jawa yang melahirkan kudapan ikonik dengan isi kacang hijau yang lembut.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Bakpia Pathok: Lembut di Dalam, Renyah di Luar",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Bakpia Pathok hadir sebagai inovasi dari kuliner khas Yogyakarta dengan karakter yang berbeda dari bakpia pada umumnya. Nama \"pathok\" menggambarkan tekstur kulit luarnya yang lebih kokoh dan sedikit renyah, namun tetap menyimpan kelembutan isian di dalamnya.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Tepung Terigu",
+              "Gula Halus",
+              "Minyak / Margarin",
+              "Kacang Hijau (untuk varian original)",
+              "Susu",
+              "Garam"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Pusat Bakpia Pathok Wijilan", address: "Jl. Wijilan No. XX, Panembahan, Kraton, Yogyakarta" },
+              { name: "Cabang Malioboro", address: "Jl. Malioboro No. XX, Sosromenduran, Gedong Tengen, Yogyakarta" },
+              { name: "Area Pathok (Sentra Bakpia)", address: "Jl. KS Tubun No. XX, Pathok, Ngampilan, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 3, name: 'Sate Klatak', desc: 'Keunikan jeruji besi sepeda sebagai tusuk sate yang menghantarkan panas sempurna ke jantung daging domba muda.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Sate Klatak: Sederhana, Gurih, dan Autentik",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Sate Klatak merupakan hidangan khas Yogyakarta yang terkenal dengan kesederhanaannya namun kaya rasa. Berbeda dari sate pada umumnya, Sate Klatak hanya dibumbui garam dan sedikit rempah, lalu dipanggang menggunakan jeruji besi yang membantu panas merata hingga ke dalam daging.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Daging Kambing Pilihan",
+              "Merica",
+              "Bumbu Gulai",
+              "Kecap (opsional)",
+              "Susu",
+              "Nasi / lontong"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Area Imogiri (Sentra Sate Klatak)", address: "Jl. Imogiri Timur, Bantul, Yogyakarta" },
+              { name: "Jejeran Warung Sate Klatak Pasar Jejeran", address: "Jl. Sultan Agung, Jejeran, Bantul, Yogyakarta" }
+            ]
+          }
+        },
         { id: 4, name: 'Kopi Joss', desc: 'Simbol kehangatan malam di sekitar Stasiun Tugu. Arang membara yang dicelupkan ke dalam kopi pekat bukan sekadar atraksi.', category: 'Semua' },
-        { id: 5, name: 'Oseng Mercun', desc: 'Hidangan pedas dengan potongan daging sapi dan cabai melimpah. Sensasi pedasnya yang "meledak" membuatnya jadi favorit.', category: 'Terlaris' },
-        { id: 6, name: 'Jadah Tempe', desc: 'Perpaduan jadah yang lembut dan tempe bacem yang manis gurih. Tekstur unik dengan rasa tradisional yang khas.', category: 'Semua' },
+        { id: 5, name: 'Oseng Mercon', desc: 'Hidangan pedas dengan potongan daging sapi dan cabai melimpah. Sensasi pedasnya yang "meledak" membuatnya jadi favorit.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Oseng Mercon: Pedas Meledak di Setiap Gigitan",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Oseng Mercon adalah hidangan khas dengan cita rasa super pedas yang menggugah selera. Dimasak dengan cabai melimpah dan potongan daging sapi, menghasilkan sensasi \"meledak\" di mulut.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Daging Sapi / Kikil",
+              "Cabai Rawit (Banyak)",
+              "Bawang merah & putih",
+              "Kecap manis",
+              "Garam & gula"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Oseng Mercon Bu Narti", address: "Jl. KH Ahmad Dahlan, Yogyakarta" },
+              { name: "Oseng Mercon Mbok Sum", address: "Jl. Diponegoro, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 6, name: 'Jadah Tempe', desc: 'Perpaduan jadah yang lembut dan tempe bacem yang manis gurih. Tekstur unik dengan rasa tradisional yang khas.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Jadah Tempe: Perpaduan Legendaris dari Lereng Merapi",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Jadah Tempe merupakan kuliner khas dari daerah Kaliurang, Yogyakarta, yang sudah dikenal sejak puluhan tahun lalu. Makanan ini awalnya dibuat oleh masyarakat setempat sebagai hidangan sederhana untuk para wisatawan yang berkunjung ke kawasan lereng Gunung Merapi.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Beras Ketan",
+              "Kelapa parut",
+              "Tempe",
+              "Ketumbar",
+              "Lengkuas",
+              "Gula merah",
+              "Bawang putih",
+              "Garam",
+              "Daun salam"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Jadah Tempe Mbah Carik", address: "Jl. Kaliurang KM 25, Sleman, Yogyakarta" },
+              { name: "Kawasan Wisata Kaliurang", address: "Jl. Kaliurang, Sleman, Yogyakarta" }
+            ]
+          }
+        },
         { id: 7, name: 'Wedang Ronde', desc: 'Minuman hangat dengan bola-bola ketan berisi kacang, disajikan dalam kuah jahe yang menghangatkan tubuh.', category: 'Terlaris' },
         { id: 8, name: 'Bak Mie Java', desc: 'Mie kuning dan bihun yang dimasak dengan kaldu ayam kampung kental, telur bebek, dan aroma khas anglo.', category: 'Terlaris' },
         { id: 9, name: 'Nasi Liwet', desc: 'Nasi gurih dengan santan dan rempah, disajikan dengan lauk tradisional khas Jawa yang menggugah selera.', category: 'Semua' },
@@ -1059,12 +1167,120 @@ export const translations = {
         popular: "Best Seller Menus"
       },
       recipes: [
-        { id: 1, name: 'Gudeg Yu Djum', desc: 'Slow-cooked for dozens of hours with firewood, creating a sweet flavor that seeps into the soul.', category: 'Terlaris' },
-        { id: 2, name: 'Bakpia Pathok', desc: 'Acculturation of Chinese and Javanese culture that gave birth to an iconic snack with soft mung bean filling.', category: 'Semua' },
-        { id: 3, name: 'Sate Klatak', desc: 'The uniqueness of bicycle iron spokes as skewers that deliver perfect heat to the heart of the young lamb meat.', category: 'Terlaris' },
+        { id: 1, name: 'Gudeg Yu Djum', desc: 'Slow-cooked for dozens of hours with firewood, creating a sweet flavor that seeps into the soul.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Gudeg Yu Djum: Taste Legend from Wijilan",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Since 1951, Yu Djum (Mrs. Djuwariyah) pioneered the kitchen on Wijilan Street. The secret of its deliciousness lies in the use of \"Besek\" (bamboo weaving) and the process of cooking using firewood for more than 24 hours. This technique provides a distinctive smoky aroma and a very soft texture of young jackfruit that does not break apart.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Young Jackfruit (Gori)",
+              "Thick Coconut Milk",
+              "Pure Coconut Sugar",
+              "Krecek (Cattle Skin)",
+              "Pindang Egg",
+              "Free-range Chicken"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Wijilan Center", address: "Jl. Wijilan No.167, Panembahan, Kraton, Yogyakarta" },
+              { name: "Dagen Center", address: "Jl. Dagen No.2C, Sosromenduran, Gedong Tengen, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 2, name: 'Bakpia Pathok', desc: 'Acculturation of Chinese and Javanese culture that gave birth to an iconic snack with soft mung bean filling.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Bakpia Pathok: Soft Inside, Crunchy Outside",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Bakpia Pathok is an innovation from Yogyakarta's typical culinary with a different character from typical bakpia. The name \"pathok\" describes the texture of the outer skin which is firmer and slightly crunchy, but still maintains the softness of the filling inside.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Wheat Flour",
+              "Powdered Sugar",
+              "Cooking Oil / Margarine",
+              "Mung Beans (for original variant)",
+              "Milk",
+              "Salt"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Wijilan Bakpia Pathok Center", address: "Jl. Wijilan No. XX, Panembahan, Kraton, Yogyakarta" },
+              { name: "Malioboro Branch", address: "Jl. Malioboro No. XX, Sosromenduran, Gedong Tengen, Yogyakarta" },
+              { name: "Pathok Area (Bakpia Center)", address: "Jl. KS Tubun No. XX, Pathok, Ngampilan, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 3, name: 'Sate Klatak', desc: 'The uniqueness of bicycle iron spokes as skewers that deliver perfect heat to the heart of the young lamb meat.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Sate Klatak: Simple, Savory, and Authentic",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Sate Klatak is a signature dish from Yogyakarta known for its simplicity yet rich flavor. Unlike typical satay, Sate Klatak is seasoned only with salt and a few spices, then grilled using iron spokes (bicycle spokes) which help conduct heat evenly to the core of the meat.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Select Mutton/Goat Meat",
+              "Pepper",
+              "Curry Spices (Gulai)",
+              "Sweet Soy Sauce (optional)",
+              "Milk",
+              "Rice / Rice Cake (Lontong)"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Imogiri Area (Sate Klatak Center)", address: "Jl. Imogiri Timur, Bantul, Yogyakarta" },
+              { name: "Jejeran Market Sate Klatak Area", address: "Jl. Sultan Agung, Jejeran, Bantul, Yogyakarta" }
+            ]
+          }
+        },
         { id: 4, name: 'Kopi Joss', desc: 'A symbol of warm nights around Tugu Station. Glowing charcoal dipped into intense coffee is more than just an attraction.', category: 'Semua' },
-        { id: 5, name: 'Oseng Mercun', desc: 'Spicy dish with chunks of beef and abundant chili. Its "exploding" spicy sensation makes it a favorite.', category: 'Terlaris' },
-        { id: 6, name: 'Jadah Tempe', desc: 'A combination of soft jadah and sweet savory tempe bacem. Unique texture with a distinct traditional flavor.', category: 'Semua' },
+        { id: 5, name: 'Oseng Mercon', desc: 'Spicy dish with chunks of beef and abundant chili. Its "exploding" spicy sensation makes it a favorite.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Oseng Mercon: Explosive Spicy in Every Bite",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Oseng Mercon is a signature dish with a super spicy flavor that whets the appetite. Cooked with abundant bird's eye chilies and chunks of beef, it produces an \"explosive\" sensation in the mouth.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Beef / Beef Tendon (Kikil)",
+              "Bird's Eye Chilies (Abundant)",
+              "Red & White Onions",
+              "Sweet Soy Sauce",
+              "Salt & Sugar"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Oseng Mercon Bu Narti", address: "Jl. KH Ahmad Dahlan, Yogyakarta" },
+              { name: "Oseng Mercon Mbok Sum", address: "Jl. Diponegoro, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 6, name: 'Jadah Tempe', desc: 'A combination of soft jadah and sweet savory tempe bacem. Unique texture with a distinct traditional flavor.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Jadah Tempe: Legendary Combination from the Slopes of Merapi",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Jadah Tempe is a typical culinary from the Kaliurang area, Yogyakarta, which has been known for decades. This food was originally made by the local community as a simple dish for tourists visiting the slopes of Mount Merapi.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Glutinous Rice",
+              "Grated Coconut",
+              "Tempeh",
+              "Coriander",
+              "Galangal",
+              "Palm Sugar",
+              "Garlic",
+              "Salt",
+              "Bay Leaf (Daun Salam)"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Jadah Tempe Mbah Carik", address: "Jl. Kaliurang KM 25, Sleman, Yogyakarta" },
+              { name: "Kawasan Wisata Kaliurang", address: "Jl. Kaliurang, Sleman, Yogyakarta" }
+            ]
+          }
+        },
         { id: 7, name: 'Wedang Ronde', desc: 'A warm drink with glutinous rice balls filled with peanuts, served in a ginger broth that warms the body.', category: 'Terlaris' },
         { id: 8, name: 'Bak Mie Java', desc: 'Yellow noodles and vermicelli cooked with thick free-range chicken broth, duck eggs, and the distinct aroma of clay stove.', category: 'Terlaris' },
         { id: 9, name: 'Nasi Liwet', desc: 'Savory rice with coconut milk and spices, served with appetizing traditional Javanese side dishes.', category: 'Semua' },
