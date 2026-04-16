@@ -473,10 +473,14 @@ const Tokoh = () => {
       </section>
 
       {/* Footer Quote Section */}
-      <section className="bg-white py-24 px-8 md:px-16 border-t border-gray-100/50">
-        <div className="max-w-[1000px] mx-auto text-center">
-            <h2 className="font-serif text-[32px] md:text-[44px] text-[#5e2b0f] mb-8">{t('tokohPage.footer.titleText')}</h2>
-            <p className="text-gray-500 text-[16px] md:text-[18px] leading-relaxed italic last:mb-0">
+      <section 
+        className="py-24 px-8 md:px-16 border-t border-gray-100/50 bg-cover bg-center overflow-hidden relative"
+        style={{ backgroundImage: "url('/Gradient.png')" }}
+      >
+        <div className="absolute inset-0 bg-[#3a2a1d]/60"></div>
+        <div className="max-w-[1000px] mx-auto text-center relative z-10">
+            <h2 className="font-serif text-[32px] md:text-[44px] text-[#e7c796] mb-8">{t('tokohPage.footer.titleText')}</h2>
+            <p className="text-gray-200 text-[16px] md:text-[18px] leading-relaxed italic last:mb-0">
                 {t('tokohPage.footer.desc')}
             </p>
         </div>

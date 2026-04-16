@@ -5,8 +5,13 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="w-full bg-[#6d4c32] text-[#e8e4db] py-16 px-6 md:px-12 font-sans">
-      <div className="max-w-[1240px] mx-auto">
+    <footer 
+      className="w-full text-[#e8e4db] py-16 px-6 md:px-12 font-sans bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      style={{ backgroundImage: "url('/Gradient.png')" }}
+    >
+      {/* Optional: Add a subtle overlay if the gradient is too busy, but typically Gradient.png is the baseline */}
+      <div className="absolute inset-0 bg-[#3a2a1d]/40 pointer-events-none"></div>
+      <div className="max-w-[1240px] mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           {/* Column 1: Brand */}

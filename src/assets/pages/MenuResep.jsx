@@ -57,9 +57,9 @@ const MenuResep = () => {
             {/* Close Button */}
             <button 
               onClick={() => setSelectedRecipe(null)}
-              className="absolute top-6 right-6 z-[110] bg-white p-2 rounded-xl shadow-lg hover:scale-110 transition-transform text-[#201008]"
+              className="absolute top-6 right-6 z-[110] bg-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl shadow-lg hover:scale-110 transition-transform text-[#201008] border border-black/5"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -88,45 +88,46 @@ const MenuResep = () => {
                   <div className="space-y-10">
                     {/* History Section */}
                     <section>
-                      <h4 className="text-[#8b6112] text-[12px] font-bold tracking-[0.1em] uppercase mb-4 opacity-70 border-b border-[#8b6112]/20 pb-2">
+                      <h4 className="text-[#8b6112] text-[11px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-5 border-b border-[#8b6112]/20 pb-2">
                         {selectedRecipe.details.historyTitle}
                       </h4>
-                      <p className="text-[#5e2b0f]/80 text-[16px] md:text-[18px] leading-relaxed">
+                      <p className="text-[#5e2b0f]/80 text-[16px] md:text-[17px] leading-relaxed font-sans">
                         {selectedRecipe.details.historyDesc}
                       </p>
                     </section>
 
                     {/* Ingredients Section */}
                     <section>
-                      <h4 className="text-[#8b6112] text-[12px] font-bold tracking-[0.1em] uppercase mb-4 opacity-70 border-b border-[#8b6112]/20 pb-2">
+                      <h4 className="text-[#8b6112] text-[11px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-6 border-b border-[#8b6112]/20 pb-2">
                         {selectedRecipe.details.ingredientsTitle}
                       </h4>
-                      <div className="grid grid-cols-2 gap-y-3 gap-x-8">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-10">
                         {selectedRecipe.details.ingredients.map((ing, idx) => (
-                          <div key={idx} className="flex items-center gap-3 text-[#5e2b0f]/90 font-medium text-[15px] md:text-[16px]">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#8b6112]"></span>
-                            {ing}
+                          <div key={idx} className="flex items-center gap-4 text-[#5e2b0f]/90 font-medium text-[15px] group">
+                            <span className="w-2 h-2 rounded-full bg-[#8b6112] group-hover:scale-125 transition-transform shrink-0"></span>
+                            <span className="font-sans">{ing}</span>
                           </div>
                         ))}
                       </div>
                     </section>
 
                     {/* Locations Section */}
-                    <section className="bg-white/40 p-6 md:p-8 rounded-[24px] border border-white/50">
-                      <h4 className="text-[#8b6112] text-[12px] font-bold tracking-[0.1em] uppercase mb-6 opacity-70 border-b border-[#8b6112]/20 pb-2">
+                    <section className="bg-white/30 backdrop-blur-sm p-6 md:p-8 rounded-[32px] border border-white/60">
+                      <h4 className="text-[#8b6112] text-[11px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-[#8b6112]/20 pb-2">
                         {selectedRecipe.details.locationsTitle}
                       </h4>
-                      <div className="space-y-6">
+                      <div className="space-y-8">
                         {selectedRecipe.details.locations.map((loc, idx) => (
-                          <div key={idx} className="flex gap-5">
-                            <div className="shrink-0 w-12 h-12 rounded-full bg-[#5e2b0f]/5 flex items-center justify-center text-[#8b6112]">
-                              <svg className="w-6 h-6" fill="currentColor" stroke="none" viewBox="0 0 24 24">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                          <div key={idx} className="flex gap-6 group">
+                            <div className="shrink-0 w-12 h-12 rounded-full bg-[#8b6112]/10 flex items-center justify-center text-[#8b6112] group-hover:bg-[#8b6112] group-hover:text-white transition-all duration-300 shadow-sm">
+                              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z" />
                               </svg>
                             </div>
-                            <div>
-                              <h5 className="text-[#5e2b0f] font-bold text-[18px] mb-1">{loc.name}</h5>
-                              <p className="text-gray-500 text-[14px] leading-snug">{loc.address}</p>
+                            <div className="flex flex-col justify-center">
+                              <h5 className="text-[#5e2b0f] font-bold text-[18px] mb-1 group-hover:text-[#8b6112] transition-colors">{loc.name}</h5>
+                              <p className="text-[#5e2b0f]/60 text-[13px] md:text-[14px] leading-snug font-sans">{loc.address}</p>
                             </div>
                           </div>
                         ))}

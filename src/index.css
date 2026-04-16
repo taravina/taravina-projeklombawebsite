@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
 @layer utilities {
   @keyframes fade-in {
     from { opacity: 0; }

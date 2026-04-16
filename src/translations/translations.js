@@ -575,7 +575,26 @@ export const translations = {
             ]
           }
         },
-        { id: 4, name: 'Kopi Joss', desc: 'Simbol kehangatan malam di sekitar Stasiun Tugu. Arang membara yang dicelupkan ke dalam kopi pekat bukan sekadar atraksi.', category: 'Semua' },
+        { id: 4, name: 'Kopi Joss', desc: 'Simbol kehangatan malam di sekitar Stasiun Tugu. Arang membara yang dicelupkan ke dalam kopi pekat bukan sekadar atraksi.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Kopi Joss: Sederhana, Gurih, dan Autentik",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Kopi Joss adalah minuman khas Yogyakarta yang unik karena disajikan dengan arang panas yang dimasukkan langsung ke dalam kopi. Suara \"joss\" saat arang menyentuh kopi menjadi ciri khasnya. Rasanya tetap nikmat dengan sentuhan smoky yang khas.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Kopi Bubuk Hitam",
+              "Gula Pasir",
+              "Air Panas",
+              "Arang Panas (Ciri Khas)"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Angkringan Kopi Jos Lik Man", address: "Jl. Wongsodirjan, dekat Stasiun Tugu, Yogyakarta" },
+              { name: "Kopi Joss Lek No", address: "Jl. Pasar Kembang, Yogyakarta" }
+            ]
+          }
+        },
         { id: 5, name: 'Oseng Mercon', desc: 'Hidangan pedas dengan potongan daging sapi dan cabai melimpah. Sensasi pedasnya yang "meledak" membuatnya jadi favorit.', category: 'Terlaris',
           details: {
             badge: "LEGENDARY CULINARY",
@@ -622,12 +641,159 @@ export const translations = {
             ]
           }
         },
-        { id: 7, name: 'Wedang Ronde', desc: 'Minuman hangat dengan bola-bola ketan berisi kacang, disajikan dalam kuah jahe yang menghangatkan tubuh.', category: 'Terlaris' },
-        { id: 8, name: 'Bak Mie Java', desc: 'Mie kuning dan bihun yang dimasak dengan kaldu ayam kampung kental, telur bebek, dan aroma khas anglo.', category: 'Terlaris' },
-        { id: 9, name: 'Nasi Liwet', desc: 'Nasi gurih dengan santan dan rempah, disajikan dengan lauk tradisional khas Jawa yang menggugah selera.', category: 'Semua' },
-        { id: 10, name: 'Serabi', desc: 'Kue tradisional berbahan tepung beras dengan rasa manis dan tekstur lembut yang dimasak di atas tungku tanah liat.', category: 'Semua' },
-        { id: 11, name: 'Ayam Goreng Kalasan', desc: 'Ayam goreng khas Jawa dengan bumbu meresap hingga gurih dan tekstur empuk yang disajikan dengan kremesan.', category: 'Terlaris' },
-        { id: 12, name: 'Soto Ayam', desc: 'Sup ayam khas Indonesia dengan kuah kuning gurih dari aroma rempah-rempah yang meresap sempurna.', category: 'Terlaris' }
+        { id: 7, name: 'Wedang Ronde', desc: 'Minuman hangat dengan bola-bola ketan berisi kacang, disajikan dalam kuah jahe yang menghangatkan tubuh.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Wedang Ronde: Hangatnya Tradisi di Setiap Tegukan",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Wedang Ronde merupakan minuman tradisional yang berasal dari perpaduan budaya Tionghoa dan Jawa. Awalnya dikenal dari hidangan \"tangyuan\" di Tiongkok, kemudian berkembang di Indonesia dengan sentuhan lokal seperti kuah jahe hangat dan tambahan isian khas.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Jahe",
+              "Gula merah",
+              "Air",
+              "Kolang kaling",
+              "Tepung ketan (ronde)",
+              "Kacang tanah",
+              "Kolang-kaling",
+              "Roti tawar",
+              "Serai"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Wedang Ronde Mbah Payem", address: "Jl. Kauman, Yogyakarta" },
+              { name: "Alun-Alun Utara Yogyakarta", address: "Jl. Alun-Alun Utara, Yogyakarta" },
+              { name: "Area Pathok (Sentra Bakpia)", address: "Jl. KS Tubun No. XX, Pathok, Ngampilan, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 8, name: 'Bakmi Jawa', desc: 'Mie kuning dan bihun yang dimasak dengan kaldu ayam kampung kental, telur bebek, dan aroma khas anglo.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Bakmi Jawa: Cita Rasa Tradisional yang Kaya dan Menggugah Selera",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Bakmi Jawa merupakan salah satu kuliner khas Yogyakarta yang telah ada sejak lama dan diwariskan secara turun-temurun. Hidangan ini berkembang dari perpaduan budaya Tionghoa dan Jawa, namun diolah dengan bumbu lokal yang lebih sederhana dan kaya rasa.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Mie telur / mie kuning",
+              "Ayam suwir",
+              "Telur",
+              "Daun bawang",
+              "Minyak",
+              "Bawang putih",
+              "Kecap manis",
+              "Kol & sawi",
+              "Kaldu ayam"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Bakmi Jawa Mbah Gito", address: "Jl. Nyi Ageng Nis, Yogyakarta" },
+              { name: "Bakmi Jawa Pak Pele", address: "Alun-Alun Utara, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 9, name: 'Nasi Liwet', desc: 'Nasi gurih dengan santan dan rempah, disajikan dengan lauk tradisional khas Jawa yang menggugah selera.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Nasi Liwet: Kelezatan Tradisional yang Menghangatkan Kebersamaan",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Nasi Liwet merupakan hidangan khas dari daerah Solo, Jawa Tengah, yang dikenal dengan cita rasa gurih dan aroma rempah yang khas. Makanan ini sejak dahulu sering disajikan dalam acara keluarga maupun tradisi masyarakat sebagai simbol kebersamaan. Nasi dimasak dengan santan dan rempah-rempah, lalu disajikan bersama berbagai lauk pendamping yang menggugah selera.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Beras",
+              "Santan",
+              "Daun Salam",
+              "Serai",
+              "Bawang Merah",
+              "Bawang Putih",
+              "Ayam Suir",
+              "Garam",
+              "Telur Pindang",
+              "Labu Siam"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Nasi Liwet Wongso Lemu", address: "Jl. Teuku Umar, Solo, Jawa Tengah" },
+              { name: "Kawasan Kuliner Solo", address: "Jl. Slamet Riyadi, Solo, Jawa Tengah" }
+            ]
+          }
+        },
+        { id: 10, name: 'Serabi', desc: 'Kue tradisional dari tepung beras dengan rasa manis dan tekstur lembut yang dimasak di atas tungku tanah liat.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Serabi: Kelembutan Tradisional dengan Sentuhan Manis Nusantara",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Serabi merupakan jajanan tradisional khas Indonesia yang sudah dikenal sejak lama, terutama di daerah Jawa Barat dan Jawa Tengah. Kue ini biasanya dimasak menggunakan tungku tanah liat, sehingga menghasilkan aroma khas yang menggoda. Dahulu, serabi sering disajikan dalam acara adat maupun sebagai camilan pagi hari karena teksturnya yang lembut dan rasanya yang sederhana namun nikmat.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Tepung Beras",
+              "Santan",
+              "Gula Merah",
+              "Ragi (Opsional)",
+              "Kelapa Parut (Untuk Toping)",
+              "Kinca (saus gula merah)",
+              "Daun Pandan"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Serabi Notosuman", address: "Jl. Mohammad Yamin, Solo, Jawa Tengah" },
+              { name: "Kawasan Kuliner Bandung", address: "Jl. Setiabudi, Bandung, Jawa Barat" }
+            ]
+          }
+        },
+        { id: 11, name: 'Ayam Goreng Kalasan', desc: 'Ayam goreng khas Jawa dengan bumbu meresap dalam dan tekstur empuk disajikan dengan kremesan renyah.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Ayam Goreng Kalasan: Kelezatan Manis Gurih Khas Tanah Jawa",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Ayam Goreng Kalasan merupakan kuliner khas dari daerah Kalasan, Yogyakarta, yang terkenal dengan cita rasa gurih dan sedikit manis. Hidangan ini memiliki keunikan pada proses memasaknya, yaitu ayam direbus terlebih dahulu dengan bumbu rempah dan air kelapa hingga meresap, kemudian digoreng hingga berwarna keemasan. Teknik ini menghasilkan ayam yang empuk di dalam dan renyah di luar.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Ayam Kampung",
+              "Santan",
+              "Bawang Merah",
+              "Air Kelapa",
+              "Garam",
+              "Minyak Goreng",
+              "Bawang Putih",
+              "Ketumbar",
+              "Lengkuas",
+              "Daun Salam",
+              "Gula Merah"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Ayam Goreng Kalasan Mbok Berek", address: "Jl. Raya Solo - Yogyakarta, Kalasan, Yogyakarta" },
+              { name: "Kawasan Kuliner Kalasan", address: "Jl. Solo Km 15, Sleman, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 12, name: 'Soto Ayam', desc: 'Sup ayam khas Indonesia dengan kuah kuning gurih dari aroma rempah-rempah yang meresap sempurna.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Soto Ayam: Kuah Hangat Penuh Rempah yang Melegenda",
+            historyTitle: "SEJARAH & PROSES",
+            historyDesc: "Soto Ayam merupakan salah satu kuliner khas Indonesia yang sangat populer di berbagai daerah. Hidangan ini dikenal dengan kuah kuning yang kaya rempah seperti kunyit dan serai, memberikan cita rasa hangat dan menyegarkan. Sejak dahulu, soto ayam menjadi makanan favorit masyarakat karena mudah ditemukan dan cocok dinikmati kapan saja, baik pagi maupun malam hari.",
+            ingredientsTitle: "BAHAN UTAMA (JANGKEP)",
+            ingredients: [
+              "Ayam Kampung",
+              "Bihun / Soun",
+              "Bawang Merah",
+              "Telur Rebus",
+              "Garam & Seledri",
+              "Daun Bawang",
+              "Bawang Putih",
+              "Kunyit & Jahe",
+              "Serai",
+              "Kol Segar"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Soto Ayam Lamongan Cak Har", address: "Jl. Arif Rahman Hakim, Surabaya, Jawa Timur" },
+              { name: "Kawasan Kuliner Lamongan", address: "Jl. Raya Lamongan, Jawa Timur" }
+            ]
+          }
+        }
       ],
       detailButton: "LIHAT DETAIL"
     },
@@ -1234,7 +1400,26 @@ export const translations = {
             ]
           }
         },
-        { id: 4, name: 'Kopi Joss', desc: 'A symbol of warm nights around Tugu Station. Glowing charcoal dipped into intense coffee is more than just an attraction.', category: 'Semua' },
+        { id: 4, name: 'Kopi Joss', desc: 'A symbol of warm nights around Tugu Station. Glowing charcoal dipped into intense coffee is more than just an attraction.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Kopi Joss: Simple, Savory, and Authentic",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Kopi Joss is a unique Yogyakarta specialty drink served with red-hot charcoal dipped directly into the coffee. The \"joss\" sound as the charcoal touches the coffee is its hallmark. The taste remains delightful with a distinct smoky touch.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Black Coffee Powder",
+              "Granulated Sugar",
+              "Hot Water",
+              "Hot Charcoal (Signature)"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Angkringan Kopi Jos Lik Man", address: "Jl. Wongsodirjan, near Tugu Station, Yogyakarta" },
+              { name: "Kopi Joss Lek No", address: "Jl. Pasar Kembang, Yogyakarta" }
+            ]
+          }
+        },
         { id: 5, name: 'Oseng Mercon', desc: 'Spicy dish with chunks of beef and abundant chili. Its "exploding" spicy sensation makes it a favorite.', category: 'Terlaris',
           details: {
             badge: "LEGENDARY CULINARY",
@@ -1281,12 +1466,159 @@ export const translations = {
             ]
           }
         },
-        { id: 7, name: 'Wedang Ronde', desc: 'A warm drink with glutinous rice balls filled with peanuts, served in a ginger broth that warms the body.', category: 'Terlaris' },
-        { id: 8, name: 'Bak Mie Java', desc: 'Yellow noodles and vermicelli cooked with thick free-range chicken broth, duck eggs, and the distinct aroma of clay stove.', category: 'Terlaris' },
-        { id: 9, name: 'Nasi Liwet', desc: 'Savory rice with coconut milk and spices, served with appetizing traditional Javanese side dishes.', category: 'Semua' },
-        { id: 10, name: 'Serabi', desc: 'Traditional cake made from rice flour with a sweet taste and soft texture cooked over a clay stove.', category: 'Semua' },
-        { id: 11, name: 'Ayam Goreng Kalasan', desc: 'Typical Javanese fried chicken with deep savory seasoning and tender texture served with crispy bits.', category: 'Terlaris' },
-        { id: 12, name: 'Soto Ayam', desc: 'Typical Indonesian chicken soup with a savory yellow broth from perfectly absorbed spice aromas.', category: 'Terlaris' }
+        { id: 7, name: 'Wedang Ronde', desc: 'A warm drink with glutinous rice balls filled with peanuts, served in a ginger broth that warms the body.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Wedang Ronde: The Warmth of Tradition in Every Sip",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Wedang Ronde is a traditional drink originating from the blend of Chinese and Javanese cultures. Originally known as \"tangyuan\" in China, it then developed in Indonesia with local touches such as warm ginger broth and signature fillings.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Ginger",
+              "Palm sugar",
+              "Water",
+              "Sugar palm fruit",
+              "Glutinous rice flour (ronde)",
+              "Peanuts",
+              "Sugar palm fruit",
+              "White bread",
+              "Lemongrass"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Wedang Ronde Mbah Payem", address: "Jl. Kauman, Yogyakarta" },
+              { name: "North Alun-Alun Yogyakarta", address: "Jl. Alun-Alun Utara, Yogyakarta" },
+              { name: "Pathok Area (Bakpia Center)", address: "Jl. KS Tubun No. XX, Pathok, Ngampilan, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 8, name: 'Bakmi Jawa', desc: 'Yellow noodles and vermicelli cooked with thick free-range chicken broth, duck eggs, and the distinct aroma of clay stove.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Bakmi Jawa: Rich and Appetite-Whetting Traditional Flavor",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Bakmi Jawa is one of the signature culinary delights of Yogyakarta that has existed for a long time and has been passed down through generations. This dish developed from a blend of Chinese and Javanese cultures, yet is processed with simpler and flavor-rich local spices.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Egg noodles / yellow noodles",
+              "Shredded chicken",
+              "Eggs",
+              "Green onions",
+              "Cooking oil",
+              "Garlic",
+              "Sweet soy sauce",
+              "Cabbage & mustard greens",
+              "Chicken broth"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Bakmi Jawa Mbah Gito", address: "Jl. Nyi Ageng Nis, Yogyakarta" },
+              { name: "Bakmi Jawa Pak Pele", address: "North Alun-Alun, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 9, name: 'Nasi Liwet', desc: 'Savory rice with coconut milk and spices, served with appetizing traditional Javanese side dishes.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Nasi Liwet: Traditional Savory Goodness for Togetherness",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Nasi Liwet is a signature dish from Solo, Central Java, known for its savory taste and distinct spice aroma. It has long been served in family gatherings and community traditions as a symbol of togetherness. The rice is cooked with coconut milk and spices, then served with various mouth-watering side dishes.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Rice",
+              "Coconut Milk",
+              "Bay Leaf",
+              "Lemongrass",
+              "Shallots",
+              "Garlic",
+              "Shredded Chicken",
+              "Salt",
+              "Hard-boiled Egg (Pindang)",
+              "Chayote Squash"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Nasi Liwet Wongso Lemu", address: "Jl. Teuku Umar, Solo, Central Java" },
+              { name: "Solo Culinary Center", address: "Jl. Slamet Riyadi, Solo, Central Java" }
+            ]
+          }
+        },
+        { id: 10, name: 'Serabi', desc: 'Traditional cake made from rice flour with a sweet taste and soft texture cooked over a clay stove.', category: 'Semua',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Serabi: Traditional Softness with a Touch of Nusantara Sweetness",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Serabi is a traditional Indonesian snack that has been known for a long time, especially in West Java and Central Java. This cake is usually cooked using a clay stove, producing a tempting signature aroma. In the past, serabi was often served in traditional ceremonies or as a morning snack because of its soft texture and simple yet delicious taste.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Rice Flour",
+              "Coconut Milk",
+              "Palm Sugar",
+              "Yeast (Optional)",
+              "Grated Coconut (For Topping)",
+              "Kinca (palm sugar sauce)",
+              "Pandan Leaves"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Serabi Notosuman", address: "Jl. Mohammad Yamin, Solo, Central Java" },
+              { name: "Bandung Culinary Area", address: "Jl. Setiabudi, Bandung, West Java" }
+            ]
+          }
+        },
+        { id: 11, name: 'Ayam Goreng Kalasan', desc: 'Typical Javanese fried chicken with deep savory seasoning and tender texture served with crispy bits.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Ayam Goreng Kalasan: The Savory and Sweet Delight of Javanese Land",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Ayam Goreng Kalasan is a signature culinary specialty from the Kalasan area, Yogyakarta, famous for its savory and slightly sweet taste. This dish is unique in its cooking process: the chicken is first boiled with spices and coconut water until absorbed, then fried until golden brown. This technique produces chicken that is tender inside and crispy outside.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Free-range Chicken",
+              "Coconut Milk",
+              "Shallots",
+              "Coconut Water",
+              "Salt",
+              "Cooking Oil",
+              "Garlic",
+              "Coriander",
+              "Galangal",
+              "Bay Leaf",
+              "Palm Sugar"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Ayam Goreng Kalasan Mbok Berek", address: "Jl. Raya Solo - Yogyakarta, Kalasan, Yogyakarta" },
+              { name: "Kalasan Culinary Area", address: "Jl. Solo Km 15, Sleman, Yogyakarta" }
+            ]
+          }
+        },
+        { id: 12, name: 'Soto Ayam', desc: 'Typical Indonesian chicken soup with a savory yellow broth from perfectly absorbed spice aromas.', category: 'Terlaris',
+          details: {
+            badge: "LEGENDARY CULINARY",
+            titleDetail: "Soto Ayam: A Legendary Warm and Spiced Broth",
+            historyTitle: "HISTORY & PROCESS",
+            historyDesc: "Soto Ayam is one of the most popular Indonesian culinary specialties in various regions. This dish is known for its yellow broth rich in spices such as turmeric and lemongrass, providing a warm and refreshing flavor. Soto ayam has long been a favorite because it's easily found and can be enjoyed at any time, whether morning or night.",
+            ingredientsTitle: "MAIN INGREDIENTS (JANGKEP)",
+            ingredients: [
+              "Free-range Chicken",
+              "Rice Vermicelli",
+              "Shallots",
+              "Boiled Eggs",
+              "Salt & Celery",
+              "Green Onions",
+              "Garlic",
+              "Turmeric & Ginger",
+              "Lemongrass",
+              "Fresh Cabbage"
+            ],
+            locationsTitle: "RECOMMENDED LOCATIONS",
+            locations: [
+              { name: "Soto Ayam Lamongan Cak Har", address: "Jl. Arif Rahman Hakim, Surabaya, East Java" },
+              { name: "Lamongan Culinary Area", address: "Jl. Raya Lamongan, East Java" }
+            ]
+          }
+        }
       ],
       detailButton: "VIEW DETAILS"
     },

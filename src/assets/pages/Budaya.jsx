@@ -234,10 +234,14 @@ const Budaya = () => {
       </section>
 
       {/* Footer-like CTA */}
-      <section className="w-full bg-[#FAF9F6] py-24 text-center px-6">
-        <div className="max-w-3xl mx-auto border-y border-gray-200 py-16">
-          <h3 className="text-3xl font-serif text-[#5E2B0F] mb-6">{t('budayaPage.cta.title')}</h3>
-          <p className="text-gray-500 mb-10">
+      <section 
+        className="w-full py-24 text-center px-6 bg-cover bg-center relative overflow-hidden"
+        style={{ backgroundImage: "url('/Gradient.png')" }}
+      >
+        <div className="absolute inset-0 bg-[#3a2a1d]/70"></div>
+        <div className="max-w-3xl mx-auto border-y border-white/20 py-16 relative z-10">
+          <h3 className="text-3xl font-serif text-[#e7c796] mb-6">{t('budayaPage.cta.title')}</h3>
+          <p className="text-gray-200 mb-10">
             {t('budayaPage.cta.desc')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
