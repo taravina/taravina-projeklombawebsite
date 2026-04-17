@@ -4,6 +4,7 @@ import { useLanguage } from '../../context/LanguageContext';
 const AsalUsul = () => {
   const { t } = useLanguage();
   const [visibleSections, setVisibleSections] = useState({});
+  const [activePhilosophy, setActivePhilosophy] = useState('general');
 
   useEffect(() => {
     const observerOptions = {
@@ -243,6 +244,82 @@ const AsalUsul = () => {
               <div className="absolute -z-10 top-20 -left-20 w-80 h-80 bg-[#8B6112]/5 rounded-full blur-3xl"></div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Filosofi Ruang Section - Interactive Discovery */}
+      <section id="spatial" className="px-8 md:px-16 py-24 md:py-40 animate-section flex flex-col items-center bg-[#FDFBF9]">
+        <div className="max-w-[1400px] w-full flex flex-col items-center">
+          {/* Header */}
+          <div className={`text-center mb-16 reveal-on-scroll ${visibleSections['spatial'] ? 'active-animation fade-in-up' : ''}`}>
+            <span className="text-[#8B6112] font-bold text-[14px] tracking-[0.4em] uppercase mb-4 block">
+              {t('asalUsulPage.philosophySpace.badge')}
+            </span>
+            <h2 className="font-serif text-[42px] md:text-[52px] text-[#5E2B0F] font-bold">
+              {t('asalUsulPage.philosophySpace.title')}
+            </h2>
+          </div>
+
+          {/* Main Interactive Banner */}
+          <div className={`w-full max-w-[1240px] mb-20 relative overflow-hidden rounded-[40px] shadow-3xl aspect-[21/9] md:aspect-[21/7] reveal-on-scroll ${visibleSections['spatial'] ? 'active-animation zoom-in' : ''}`} style={{ transitionDelay: '0.2s' }}>
+            {Object.keys(t('asalUsulPage.philosophySpace.items')).map((key) => (
+              <div 
+                key={key}
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                  activePhilosophy === key ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
+                }`}
+              >
+                <img 
+                  src={t(`asalUsulPage.philosophySpace.items.${key}.image`)} 
+                  alt={t(`asalUsulPage.philosophySpace.items.${key}.title`)}
+                  className="w-full h-full object-cover brightness-[0.85] contrast-[1.05]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-10 md:p-16">
+                  <h3 className="text-white font-serif text-[36px] md:text-[48px] font-bold mb-4 tracking-wide">
+                    {t(`asalUsulPage.philosophySpace.items.${key}.title`)}
+                  </h3>
+                  <p className="text-white/80 text-[18px] md:text-[20px] max-w-3xl leading-relaxed font-sans font-light">
+                    {t(`asalUsulPage.philosophySpace.items.${key}.desc`)}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Icon Cards Grid */}
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1240px] reveal-on-scroll ${visibleSections['spatial'] ? 'active-animation fade-in-up' : ''}`} style={{ transitionDelay: '0.4s' }}>
+            {[
+              { id: 'merapi', icon: 'M12 2L2 22h20L12 2zm0 4.5l6.5 11.5H5.5L12 6.5z' },
+              { id: 'keraton', icon: 'M3 10V21H21V10L12 2L3 10ZM12 5.5L19 11.75V19H5V11.75L12 5.5ZM10 13H14V17H10V13Z' },
+              { id: 'sea', icon: 'M3 12c4 0 4 4 9 4s5-4 9-4M3 16c4 0 4 4 9 4s5-4 9-4' }
+            ].map((item) => (
+              <div 
+                key={item.id}
+                onClick={() => setActivePhilosophy(item.id)}
+                className={`group p-12 rounded-[32px] cursor-pointer transition-all duration-700 flex flex-col items-center text-center
+                  ${activePhilosophy === item.id 
+                    ? 'bg-white shadow-[0_40px_80px_rgba(0,0,0,0.08)] border border-[#EADCCB] -translate-y-4' 
+                    : 'bg-white/40 border border-transparent hover:bg-white hover:shadow-xl hover:-translate-y-2'}`}
+              >
+                <div className={`w-20 h-20 rounded-[24px] flex items-center justify-center mb-8 transition-all duration-700
+                  ${activePhilosophy === item.id 
+                    ? 'bg-[#5E2B0F] text-[#D97736] rotate-[360deg] shadow-lg' 
+                    : 'bg-white text-[#8B6112] shadow-sm rotate-0'}`}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-10 h-10">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                  </svg>
+                </div>
+                <h4 className="font-serif text-[26px] font-bold text-[#5E2B0F] mb-4">
+                  {t(`asalUsulPage.philosophySpace.items.${item.id}.title`)}
+                </h4>
+                <p className="text-[#6B5A4E] text-[15px] leading-relaxed opacity-80">
+                  {t(`asalUsulPage.philosophySpace.items.${item.id}.desc`)}
+                </p>
+                <div className={`mt-8 w-12 h-[2px] transition-all duration-700 
+                  ${activePhilosophy === item.id ? 'bg-[#8B6112] w-20' : 'bg-transparent'}`}></div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from "../../context/LanguageContext";
 
 const MenuResep = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('Semua');
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
@@ -154,10 +155,13 @@ const MenuResep = () => {
 
       {/* Premium Header - Matching Mockup */}
       <header className="bg-[#483327] text-white px-8 py-5 flex items-center justify-between sticky top-0 z-50 shadow-lg">
-        <Link to="/kuliner" className="flex items-center gap-2 text-[18px] font-medium hover:opacity-80 transition-opacity">
+        <button 
+          onClick={() => navigate(-1)} 
+          className="flex items-center gap-2 text-[18px] font-medium hover:opacity-80 transition-opacity cursor-pointer z-10"
+        >
           <span className="text-[22px]">←</span> {t('menuResepPage.header.back')}
-        </Link>
-        <h1 className="text-[24px] font-serif font-bold tracking-wide absolute left-1/2 -translate-x-1/2 text-center w-full pointer-events-none md:pointer-events-auto">
+        </button>
+        <h1 className="text-[24px] font-serif font-bold tracking-wide absolute left-1/2 -translate-x-1/2 text-center w-full pointer-events-none">
           {t('menuResepPage.header.title')}
         </h1>
         <div className="w-10"></div> {/* Spacer to maintain layout symmetry */}

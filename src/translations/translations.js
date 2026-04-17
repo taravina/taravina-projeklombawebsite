@@ -28,6 +28,32 @@ export const translations = {
         quote: "Sultan Hamengkubuwono I tidak hanya mendirikan sebuah kota, tetapi mengukir identitas spiritual di atas tanah yang diberkati.",
         locationLabel: "LOKASI SEJARAH",
         location: "Desa Giyanti, Dukuh Kerten, Jantiharjo, Karanganyar, Jawa Tengah"
+      },
+      philosophySpace: {
+        badge: "FILOSOFI RUANG",
+        title: "Garis Imajiner: Keseimbangan Alam",
+        items: {
+          general: {
+            image: "/filosofi_umum.png",
+            title: "Hamemayu Hayuning Bawana",
+            desc: "Prinsip dasar kehidupan masyarakat Yogyakarta untuk mempercantik keindahan dunia dan menjaga harmoni alam."
+          },
+          merapi: {
+            image: "/filosofi_merapi.png",
+            title: "Gunung Merapi",
+            desc: "Elemen api yang melambangkan kekuatan maskulin dan asal muasal kehidupan."
+          },
+          keraton: {
+            image: "/filosofi_keraton.png",
+            title: "Keraton Yogyakarta",
+            desc: "Pusat kosmik dan penyeimbang antara kekuatan utara dan selatan."
+          },
+          sea: {
+            image: "/filosofi_laut.png",
+            title: "Laut Selatan",
+            desc: "Elemen air yang melambangkan sisi feminin dan tujuan akhir spiritual."
+          }
+        }
       }
     },
     navbar: {
@@ -308,7 +334,7 @@ export const translations = {
       destinasiDetails: {
         vredeburg: {
           title: "Benteng Vredeburg",
-          bgImage: "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=1600",
+          bgImage: "/banteng_vredeburg.png",
           sejarahTitle: "Sejarah",
           sejarahText: "Benteng Vredeburg dibangun tahun 1760 di Yogyakarta oleh Sri Sultan Hamengkubuwono I di bawah pengawasan Belanda. Awalnya bernama Rustenburg, benteng ini digunakan Belanda untuk mengawasi Keraton dan menjadi markas militer, termasuk saat masa Jepang.",
           meta: [
@@ -317,16 +343,16 @@ export const translations = {
             { icon: "map", label: "Benteng Vredeburg", value: "Yogyakarta" }
           ],
           gallery: [
-            "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1596402184320-417d7178b2cd?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=400"
+            "/banteng_vredeburg.png",
+            "/banteng_vredeburg.png",
+            "/banteng_vredeburg.png"
           ],
           lokasiTitle: "Lokasi",
           lokasiAddress: "Jl. Margo Mulyo No. 6, Ngupasan, Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55121"
         },
         tamansari: {
           title: "Taman Sari",
-          bgImage: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=1600",
+          bgImage: "/taman_sari.png",
           sejarahTitle: "Sejarah",
           sejarahText: "Taman Sari dibangun pada tahun 1758 pada masa pemerintahan Sri Sultan Hamengkubuwono I. Kompleks ini dulunya merupakan taman istana sekaligus tempat peristirahatan keluarga kerajaan. Selain sebagai tempat rekreasi, Taman Sari juga memiliki fungsi sebagai benteng pertahanan dan tempat meditasi. Kini, Taman Sari menjadi salah satu destinasi wisata sejarah yang terkenal di Yogyakarta.",
           meta: [
@@ -335,16 +361,16 @@ export const translations = {
             { icon: "map", label: "Taman Sari", value: "Yogyakarta" }
           ],
           gallery: [
-            "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&q=80&w=400"
+            "/taman_sari.png",
+            "/taman_sari.png",
+            "/taman_sari.png"
           ],
           lokasiTitle: "Lokasi",
           lokasiAddress: "Patehan, Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55133"
         },
         sonobudoyo: {
           title: "Museum Sonobudoyo",
-          bgImage: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=1600",
+          bgImage: "/museum_sonobudoyo.png",
           sejarahTitle: "Sejarah",
           sejarahText: "Museum Sonobudoyo menyimpan koleksi kebudayaan Jawa yang paling lengkap setelah Museum Nasional di Jakarta. Berdiri sejak zaman kolonial, museum ini menjadi jendela utama bagi siapa saja yang ingin mendalami seni, arkeologi, dan sejarah Jawa.",
           meta: [
@@ -353,9 +379,9 @@ export const translations = {
             { icon: "map", label: "Pusat Kota", value: "Yogyakarta" }
           ],
           gallery: [
-            "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=400"
+            "/museum_sonobudoyo.png",
+            "/museum_sonobudoyo.png",
+            "/museum_sonobudoyo.png"
           ],
           lokasiTitle: "Lokasi",
           lokasiAddress: "Jl. Pangurakan No.6, Ngupasan, Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122"
@@ -883,6 +909,32 @@ export const translations = {
         quote: "Sultan Hamengkubuwono I did not just build a city, but carved a spiritual identity on a blessed land.",
         locationLabel: "HISTORICAL LOCATION",
         location: "Giyanti Village, Kerten Hamlet, Jantiharjo, Karanganyar, Central Java"
+      },
+      philosophySpace: {
+        badge: "SPATIAL PHILOSOPHY",
+        title: "Imaginary Axis: Cosmic Balance",
+        items: {
+          general: {
+            image: "/filosofi_umum.png",
+            title: "Hamemayu Hayuning Bawana",
+            desc: "The fundamental principle of Yogyakarta society to enhance the beauty of the world and maintain natural harmony."
+          },
+          merapi: {
+            image: "/filosofi_merapi.png",
+            title: "Mount Merapi",
+            desc: "Fire element representing masculine strength and the origin of life."
+          },
+          keraton: {
+            image: "/filosofi_keraton.png",
+            title: "The Palace",
+            desc: "Cosmic center and balancer between northern and southern forces."
+          },
+          sea: {
+            image: "/filosofi_laut.png",
+            title: "South Sea",
+            desc: "Water element representing the feminine side and the ultimate spiritual goal."
+          }
+        }
       }
     },
     navbar: {
@@ -1163,7 +1215,7 @@ export const translations = {
       destinasiDetails: {
         vredeburg: {
           title: "Vredeburg Fort",
-          bgImage: "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=1600",
+          bgImage: "/banteng_vredeburg.png",
           sejarahTitle: "History",
           sejarahText: "Vredeburg Fort was built in 1760 in Yogyakarta by Sri Sultan Hamengkubuwono I under Dutch supervision. Originally named Rustenburg, this fort was used by the Dutch to oversee the Palace and became a military headquarters, including during the Japanese era.",
           meta: [
@@ -1172,16 +1224,16 @@ export const translations = {
             { icon: "map", label: "Vredeburg Fort", value: "Yogyakarta" }
           ],
           gallery: [
-            "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1596402184320-417d7178b2cd?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=400"
+            "/banteng_vredeburg.png",
+            "/banteng_vredeburg.png",
+            "/banteng_vredeburg.png"
           ],
           lokasiTitle: "Location",
           lokasiAddress: "Jl. Margo Mulyo No. 6, Ngupasan, Gondomanan, Yogyakarta City, Special Region of Yogyakarta 55121"
         },
         tamansari: {
           title: "Taman Sari",
-          bgImage: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=1600",
+          bgImage: "/taman_sari.png",
           sejarahTitle: "History",
           sejarahText: "Taman Sari was built in 1758 during the reign of Sri Sultan Hamengkubuwono I. This complex was once a royal garden and a resting place for the royal family. In addition to being a recreational spot, Taman Sari also functioned as a defensive fort and a place for meditation. Today, Taman Sari has become one of the famous historical tourism destinations in Yogyakarta.",
           meta: [
@@ -1190,16 +1242,16 @@ export const translations = {
             { icon: "map", label: "Taman Sari", value: "Yogyakarta" }
           ],
           gallery: [
-            "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&q=80&w=400"
+            "/taman_sari.png",
+            "/taman_sari.png",
+            "/taman_sari.png"
           ],
           lokasiTitle: "Location",
           lokasiAddress: "Patehan, Kraton, Yogyakarta City, Special Region of Yogyakarta 55133"
         },
         sonobudoyo: {
           title: "Sonobudoyo Museum",
-          bgImage: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=1600",
+          bgImage: "/museum_sonobudoyo.png",
           sejarahTitle: "History",
           sejarahText: "Sonobudoyo Museum houses the most complete collection of Javanese culture after the National Museum in Jakarta. Established during colonial times, this museum serves as the primary window for anyone wishing to delve into Javanese art, archaeology, and history.",
           meta: [
@@ -1208,9 +1260,9 @@ export const translations = {
             { icon: "map", label: "City Center", value: "Yogyakarta" }
           ],
           gallery: [
-            "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=400",
-            "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=400"
+            "/museum_sonobudoyo.png",
+            "/museum_sonobudoyo.png",
+            "/museum_sonobudoyo.png"
           ],
           lokasiTitle: "Location",
           lokasiAddress: "Jl. Pangurakan No.6, Ngupasan, Gondomanan, Yogyakarta City, Special Region of Yogyakarta 55122"

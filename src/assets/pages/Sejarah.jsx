@@ -5,13 +5,19 @@ import { useLanguage } from "../../context/LanguageContext";
 const Sejarah = () => {
   const { t } = useLanguage();
   const images = ['/foto1.png', '/foto2.png', '/foto3.png', '/foto4.png'];
+  const event1Images = ['/ginanthi1.png', '/giyanthi2.png', '/giyanthi3.png', '/giyanthi4.png'];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [event1Index, setEvent1Index] = useState(0);
   const [selectedFigureId, setSelectedFigureId] = useState(null); // 'hb1', 'hb9', or null
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
+
+    const event1Timer = setInterval(() => {
+      setEvent1Index((prevIndex) => (prevIndex + 1) % event1Images.length);
+    }, 4000);
 
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setSelectedFigureId(null);
@@ -21,9 +27,10 @@ const Sejarah = () => {
 
     return () => {
       clearInterval(timer);
+      clearInterval(event1Timer);
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [images.length]);
+  }, [images.length, event1Images.length]);
 
   useEffect(() => {
     if (selectedFigureId) {
@@ -105,6 +112,32 @@ const Sejarah = () => {
 
       </div>
 
+      <style>{`
+        .perspective-2000 {
+          perspective: 2000px;
+        }
+        .book-page {
+          transform-origin: left center;
+          transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+          backface-visibility: hidden;
+        }
+        .book-page-flipped {
+          transform: rotateY(-160deg);
+          opacity: 0;
+          pointer-events: none;
+        }
+        .book-page-active {
+          transform: rotateY(0deg);
+          opacity: 1;
+          z-index: 10;
+        }
+        .book-page-next {
+          transform: rotateY(0deg);
+          opacity: 1;
+          z-index: 5;
+        }
+      `}</style>
+
       </section>
 
       {/* Garis Waktu Peradaban (Timeline) */}
@@ -128,7 +161,7 @@ const Sejarah = () => {
             {/* Event 1: 1755 */}
             <div className="flex flex-col md:flex-row items-center mb-32 relative">
               <div className="w-full md:w-1/2 pr-0 md:pr-20 text-center md:text-right mb-12 md:mb-0 order-2 md:order-1">
-                <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-100 block mb-2 leading-none">{t('sejarahPage.timeline.event1Year')}</span>
+                <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-200 block mb-2 leading-none">{t('sejarahPage.timeline.event1Year')}</span>
                 <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-4">{t('sejarahPage.timeline.event1Title')}</h3>
                 <p className="text-gray-500 text-[16px] leading-relaxed max-w-lg ml-auto">
                   {t('sejarahPage.timeline.event1Desc')}
@@ -147,12 +180,46 @@ const Sejarah = () => {
               </div>
 
               <div className="w-full md:w-1/2 pl-0 md:pl-20 order-1 md:order-2 mb-8 md:mb-0">
-                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-                  <img 
-                    src="/mataram.png" 
-                    alt={t('sejarahPage.timeline.event1Title')} 
-                    className="w-full aspect-[4/3] object-cover"
-                  />
+                <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-500 relative aspect-[4/3] group/slider perspective-2000 bg-[#EADCCB]">
+                  {/* Backdrop shadow for more depth */}
+                  <div className="absolute inset-y-0 left-0 w-8 bg-black/10 blur-xl z-20 pointer-events-none"></div>
+                  
+                  {event1Images.map((img, index) => {
+                    const isActive = index === event1Index;
+                    const isPrevious = index === (event1Index - 1 + event1Images.length) % event1Images.length;
+                    
+                    return (
+                      <div 
+                        key={img}
+                        className={`absolute inset-0 w-full h-full book-page ${
+                          isActive ? 'book-page-active' : 
+                          isPrevious ? 'book-page-flipped' : 'opacity-0'
+                        }`}
+                      >
+                        <img 
+                          src={img} 
+                          alt={`${t('sejarahPage.timeline.event1Title')} ${index + 1}`} 
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Shading overlay for realism during flip */}
+                        <div className={`absolute inset-0 bg-black/20 transition-opacity duration-1200 ${
+                          isPrevious ? 'opacity-100' : 'opacity-0'
+                        }`}></div>
+                      </div>
+                    );
+                  })}
+                  
+                  {/* Subtle Navigation dots for the mini-slider */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30 transition-opacity duration-300 opacity-60 group-hover/slider:opacity-100">
+                    {event1Images.map((_, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                          idx === event1Index ? 'bg-white w-3' : 'bg-white/40'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -181,7 +248,7 @@ const Sejarah = () => {
               </div>
 
               <div className="w-full md:w-1/2 pl-0 md:pl-20 text-center md:text-left order-2 md:order-2">
-                <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-100 block mb-2 leading-none">{t('sejarahPage.timeline.event2Year')}</span>
+                <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-200 block mb-2 leading-none">{t('sejarahPage.timeline.event2Year')}</span>
                 <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-4">{t('sejarahPage.timeline.event2Title')}</h3>
                 <p className="text-gray-500 text-[16px] leading-relaxed max-w-lg">
                    {t('sejarahPage.timeline.event2Desc')}
