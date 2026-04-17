@@ -126,20 +126,20 @@ const Destinasi = () => {
                 slug: "vredeburg",
                 title: t('destinasiPage.cultureHistory.vredeburgTitle'),
                 desc: t('destinasiPage.cultureHistory.vredeburgDesc'),
-                img: "/vredeburg.png"
+                img: "/banteng_vredeburg.png"
               },
               {
                 slug: "tamansari",
                 title: t('destinasiPage.cultureHistory.tamansariTitle'),
                 desc: t('destinasiPage.cultureHistory.tamansariDesc'),
-                img: "tamansari.png",
+                img: "/taman_sari.png",
                 badge: "AR ENABLED"
               },
               {
                 slug: "sonobudoyo",
                 title: t('destinasiPage.cultureHistory.sonobudoyoTitle'),
                 desc: t('destinasiPage.cultureHistory.sonobudoyoDesc'),
-                img: "sonobudoyo.png"
+                img: "/museum_sonobudoyo.png"
               }
             ].map((item, idx) => (
               <Link
