@@ -16,6 +16,7 @@ import MenuResep from "./assets/pages/MenuResep";
 import Tokoh from "./assets/pages/Tokoh";
 import Peristiwa from "./assets/pages/Peristiwa";
 import DestinasiDetail from "./assets/pages/DestinasiDetail";
+import AsalUsul from "./assets/pages/AsalUsul";
 
 const AppContent = () => {
   const { language } = useLanguage();
@@ -27,6 +28,7 @@ const AppContent = () => {
         <Route path="/" element={<Home />} />
         <Route path="/kuliner" element={<Kuliner />} />
         <Route path="/sejarah" element={<Sejarah />} />
+        <Route path="/asal-usul" element={<AsalUsul />} />
         <Route path="/tokoh" element={<Tokoh />} />
         <Route path="/peristiwa" element={<Peristiwa />} />
         <Route path="/budaya" element={<Budaya />} />

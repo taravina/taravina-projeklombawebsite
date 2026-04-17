@@ -14,7 +14,7 @@ const Navbar = () => {
       path: '/sejarah',
       hasDropdown: true,
       subLinks: [
-        { name: t('navbar.sejarah.asal'), path: '/sejarah#keraton' },
+        { name: t('navbar.sejarah.asal'), path: '/asal-usul' },
         { name: t('navbar.sejarah.tokoh'), path: '/tokoh' },
         { name: t('navbar.sejarah.peristiwa'), path: '/peristiwa' },
       ]

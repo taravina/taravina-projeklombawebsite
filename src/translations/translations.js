@@ -1,5 +1,35 @@
 export const translations = {
   ID: {
+    asalUsulPage: {
+      hero: {
+        badge: "EST. 1755",
+        title: "Menelusuri Sangkan Paraning Mataram",
+        desc: "Sebuah narasi agung tentang berdirinya Nagari Ngayogyakarta Hadiningrat, lahir dari kebijaksanaan politik dan spiritualitas yang mendalam di bawah naungan Keraton Mataram.",
+        year: "268",
+        yearLabel: "TAHUN PERADABAN"
+      },
+      philosophy: {
+        title: "Sangkan Paraning Mataram",
+        desc: "Filosofi 'Sangkan Paraning Dumadi' yang menjadi landasan spiritual kota Yogyakarta, menggambarkan asal dan tujuan hidup manusia.",
+        items: [
+          { title: "Kosmologi", desc: "Hubungan harmonis antara Gunung Merapi, Keraton, dan Laut Selatan." },
+          { title: "Arsitektur", desc: "Setiap jengkal tanah Keraton dibangun dengan makna filosofis yang mendalam." }
+        ]
+      },
+      history: {
+        title: "Perjanjian Giyanti 1755",
+        desc: "Peristiwa krusial yang membagi Mataram menjadi dua, melahirkan Kesultanan Yogyakarta.",
+        detailed: "Pada 13 Februari 1755, sejarah mencatat babak baru. Perjanjian Giyanti ditandatangani, membelah bumi Mataram dan memberikan hak kepada Pangeran Mangkubumi untuk mendirikan sebuah nagari baru yang kelak kita kenal sebagai Yogyakarta."
+      },
+      giyanti: {
+        title: "Palihan Nagari: Perjanjian Giyanti",
+        desc1: "13 Februari 1755 menandai titik balik sejarah Jawa. Di Desa Giyanti, sebuah kesepakatan besar ditandatangani antara VOC, Sunan Pakubuwana III, dan Pangeran Mangkubumi.",
+        desc2: "Perjanjian ini secara formal membagi Kerajaan Mataram menjadi dua wilayah kedaulatan: Kasunanan Surakarta dan Kasultanan Yogyakarta. Pangeran Mangkubumi kemudian naik tahta sebagai Sultan Hamengkubuwono I, sang pendiri peradaban Yogyakarta.",
+        quote: "Sultan Hamengkubuwono I tidak hanya mendirikan sebuah kota, tetapi mengukir identitas spiritual di atas tanah yang diberkati.",
+        locationLabel: "LOKASI SEJARAH",
+        location: "Desa Giyanti, Dukuh Kerten, Jantiharjo, Karanganyar, Jawa Tengah"
+      }
+    },
     navbar: {
       brand: "Kota Yogyakarta",
       beranda: "Beranda",
@@ -825,6 +855,36 @@ export const translations = {
     }
   },
   EN: {
+    asalUsulPage: {
+      hero: {
+        badge: "EST. 1755",
+        title: "Tracing the Origins of Mataram",
+        desc: "A grand narrative about the founding of Nagari Ngayogyakarta Hadiningrat, born from political wisdom and deep spirituality under the auspices of the Mataram Palace.",
+        year: "268",
+        yearLabel: "YEARS OF CIVILIZATION"
+      },
+      philosophy: {
+        title: "Sangkan Paraning Mataram",
+        desc: "The 'Sangkan Paraning Dumadi' philosophy which is the spiritual foundation of the city of Yogyakarta, describing the origin and purpose of human life.",
+        items: [
+          { title: "Cosmology", desc: "Harmonious relationship between Mount Merapi, the Palace, and the South Sea." },
+          { title: "Architecture", desc: "Every inch of the Palace grounds is built with deep philosophical meaning." }
+        ]
+      },
+      history: {
+        title: "Giyanti Agreement 1755",
+        desc: "The crucial event that divided Mataram into two, giving birth to the Yogyakarta Sultanate.",
+        detailed: "On February 13, 1755, history recorded a new chapter. The Giyanti Agreement was signed, dividing the land of Mataram and granting Prince Mangkubumi the right to establish a new nagari which we would later know as Yogyakarta."
+      },
+      giyanti: {
+        title: "Palihan Nagari: Giyanti Agreement",
+        desc1: "February 13, 1755 marked a turning point in Javanese history. In Giyanti Village, a major agreement was signed between the VOC, Sunan Pakubuwana III, and Prince Mangkubumi.",
+        desc2: "This agreement formally divided the Mataram Kingdom into two sovereign territories: the Surakarta Sunanate and the Yogyakarta Sultanate. Prince Mangkubumi then ascended the throne as Sultan Hamengkubuwono I, the founder of Yogyakarta civilization.",
+        quote: "Sultan Hamengkubuwono I did not just build a city, but carved a spiritual identity on a blessed land.",
+        locationLabel: "HISTORICAL LOCATION",
+        location: "Giyanti Village, Kerten Hamlet, Jantiharjo, Karanganyar, Central Java"
+      }
+    },
     navbar: {
       brand: "Yogyakarta City",
       beranda: "Home",
