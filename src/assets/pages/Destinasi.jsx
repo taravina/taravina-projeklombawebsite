@@ -126,20 +126,20 @@ const Destinasi = () => {
                 slug: "vredeburg",
                 title: t('destinasiPage.cultureHistory.vredeburgTitle'),
                 desc: t('destinasiPage.cultureHistory.vredeburgDesc'),
-                img: "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=800"
+                img: "/vredeburg.png"
               },
               {
                 slug: "tamansari",
                 title: t('destinasiPage.cultureHistory.tamansariTitle'),
                 desc: t('destinasiPage.cultureHistory.tamansariDesc'),
-                img: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=800",
+                img: "tamansari.png",
                 badge: "AR ENABLED"
               },
               {
                 slug: "sonobudoyo",
                 title: t('destinasiPage.cultureHistory.sonobudoyoTitle'),
                 desc: t('destinasiPage.cultureHistory.sonobudoyoDesc'),
-                img: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=800"
+                img: "sonobudoyo.png"
               }
             ].map((item, idx) => (
               <Link
@@ -189,11 +189,11 @@ const Destinasi = () => {
 
           {/* Left: Image */}
           <div className="relative group">
-            <div className="overflow-hidden rounded-[32px] shadow-2xl">
+            <div className="overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1570714061648-2016e1d51f71?auto=format&fit=crop&q=80&w=1200"
+                src="/jalan_malioboro.png"
                 alt="Jalan Malioboro"
-                className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="w-full aspect-[4/5] shadow-2xl object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
             {/* Subtle decorative element */}
