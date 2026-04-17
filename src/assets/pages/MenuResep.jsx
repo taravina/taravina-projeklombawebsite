@@ -27,9 +27,9 @@ const MenuResep = () => {
     6: '/kuliner_jadah.png',
     7: '/kuliner_ronde.png',
     8: '/kuliner_mie_jawa.png',
-    9: 'https://images.unsplash.com/photo-1512058560566-427a193430ee?auto=format&fit=crop&q=80&w=800',
-    10: 'https://images.unsplash.com/photo-1589113103503-496fb8978644?auto=format&fit=crop&q=80&w=800',
-    11: 'https://images.unsplash.com/photo-1562967914-6c82c48bb510?auto=format&fit=crop&q=80&w=800',
+    9: '/nasi_liwet.png',
+    10: '/serabi.png',
+    11: '/ayam_goreng_kalasan.png',
     12: '/soto_ayam.png'
   };
 
@@ -39,7 +39,7 @@ const MenuResep = () => {
   }));
 
   const filteredRecipes = activeFilter === 'Semua'
-    ? recipes 
+    ? recipes
     : recipes.filter(r => r.category === 'Terlaris').slice(0, 5);
 
   return (
@@ -48,14 +48,14 @@ const MenuResep = () => {
       {/* Recipe Detail Modal using Portal for absolute viewport fixing */}
       {selectedRecipe && createPortal(
         <div className="fixed inset-0 z-[9999] flex items-start justify-center p-4 md:p-8 overflow-y-auto pt-10 md:pt-24 pointer-events-auto">
-          <div 
+          <div
             className="fixed inset-0 bg-[#201008]/60 backdrop-blur-sm transition-opacity"
             onClick={() => setSelectedRecipe(null)}
           ></div>
-          
+
           <div className="relative w-full max-w-[1240px] max-h-fit md:max-h-[90vh] overflow-hidden rounded-[32px] shadow-2xl flex flex-col md:flex-row animate-scale-up z-[10000]">
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setSelectedRecipe(null)}
               className="absolute top-6 right-6 z-[110] bg-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl shadow-lg hover:scale-110 transition-transform text-[#201008] border border-black/5"
             >
@@ -66,9 +66,9 @@ const MenuResep = () => {
 
             {/* Left: Image Side */}
             <div className="w-full md:w-1/2 h-[400px] md:h-auto overflow-hidden bg-[#201008]">
-              <img 
-                src={selectedRecipe.image} 
-                alt={selectedRecipe.name} 
+              <img
+                src={selectedRecipe.image}
+                alt={selectedRecipe.name}
                 className="w-full h-full object-cover block"
               />
             </div>
@@ -80,7 +80,7 @@ const MenuResep = () => {
                   <span className="text-[#8b6112] text-[12px] md:text-[14px] font-bold tracking-[0.2em] uppercase mb-4 block">
                     {selectedRecipe.details.badge}
                   </span>
-                  
+
                   <h2 className="text-[32px] md:text-[44px] font-serif font-black text-[#5e2b0f] leading-[1.1] mb-10">
                     {selectedRecipe.details.titleDetail}
                   </h2>
@@ -165,26 +165,24 @@ const MenuResep = () => {
 
       {/* Main Content Container */}
       <main className="max-w-[1400px] mx-auto px-8 md:px-16 mt-16">
-        
+
         {/* Filter Section */}
         <div className="flex gap-6 mb-20">
-          <button 
+          <button
             onClick={() => setActiveFilter('Semua')}
-            className={`px-12 py-4 rounded-full text-[20px] font-serif font-bold transition-all duration-300 ${
-              activeFilter === 'Semua'
-              ? 'bg-[#5E2B0F] text-white shadow-xl scale-105' 
+            className={`px-12 py-4 rounded-full text-[20px] font-serif font-bold transition-all duration-300 ${activeFilter === 'Semua'
+              ? 'bg-[#5E2B0F] text-white shadow-xl scale-105'
               : 'bg-[#C5A384] text-[#5E2B0F] hover:bg-[#b59374] opacity-80'
-            }`}
+              }`}
           >
             {t('menuResepPage.filters.all')}
           </button>
-          <button 
+          <button
             onClick={() => setActiveFilter('Terlaris')}
-            className={`px-12 py-4 rounded-full text-[20px] font-serif font-bold transition-all duration-300 ${
-              activeFilter === 'Terlaris'
-              ? 'bg-[#5E2B0F] text-white shadow-xl scale-105' 
+            className={`px-12 py-4 rounded-full text-[20px] font-serif font-bold transition-all duration-300 ${activeFilter === 'Terlaris'
+              ? 'bg-[#5E2B0F] text-white shadow-xl scale-105'
               : 'bg-[#C5A384] text-[#5E2B0F] hover:bg-[#b59374] opacity-80'
-            }`}
+              }`}
           >
             {t('menuResepPage.filters.popular')}
           </button>
@@ -198,16 +196,16 @@ const MenuResep = () => {
         {/* Recipe Premium Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {filteredRecipes.map((recipe) => (
-            <div 
-              key={recipe.id} 
+            <div
+              key={recipe.id}
               className="bg-white rounded-[24px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-700 flex flex-col h-full group"
             >
               {/* Image Container */}
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img 
-                  src={recipe.image} 
-                  alt={recipe.name} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                <img
+                  src={recipe.image}
+                  alt={recipe.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
@@ -220,10 +218,10 @@ const MenuResep = () => {
                 <p className="text-[#6B7280] text-[16px] leading-relaxed mb-10 flex-grow font-sans">
                   {recipe.desc}
                 </p>
-                
+
                 {/* CTA Link */}
                 <div className="mt-auto">
-                  <span 
+                  <span
                     onClick={() => setSelectedRecipe(recipe)}
                     className="inline-block text-[#8b6112] text-[14px] font-bold tracking-[0.1em] uppercase border-b-2 border-[#8b6112]/30 pb-1 cursor-pointer hover:text-[#5e2b0f] hover:border-[#5e2b0f] transition-all duration-300"
                   >

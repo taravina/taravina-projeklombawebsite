@@ -11,9 +11,9 @@ const Destinasi = () => {
       <section className="relative h-screen flex items-center px-8 md:px-16 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/destinasi_hero.png" 
-            alt="Tanah Mataram" 
+          <img
+            src="/destinasi_hero.png"
+            alt="Tanah Mataram"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
@@ -46,7 +46,7 @@ const Destinasi = () => {
       {/* Sumbu Filosofis Section */}
       <section className="px-8 md:px-16 pt-24 md:pt-32 pb-16 md:pb-24 bg-[#FAF9F6]">
         <div className="max-w-[1400px] mx-auto">
-          
+
           {/* Section Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
             <div className="max-w-2xl">
@@ -67,13 +67,13 @@ const Destinasi = () => {
 
           {/* Asymmetric Image Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
-            
+
             {/* Left Image: Keraton */}
             <div className="md:col-span-7 group">
               <div className="overflow-hidden rounded-[24px] shadow-2xl mb-8">
-                <img 
-                  src="https://images.unsplash.com/photo-1596402184320-417d7178b2cd?auto=format&fit=crop&q=80&w=1400" 
-                  alt="Keraton Yogyakarta" 
+                <img
+                  src="/keraton.png"
+                  alt="Keraton Yogyakarta"
                   className="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
@@ -85,9 +85,9 @@ const Destinasi = () => {
             {/* Right Image: Panggung Krapyak */}
             <div className="md:col-span-5 mt-0 md:mt-24">
               <div className="relative group overflow-hidden rounded-[24px] shadow-xl mb-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Panggung Krapyak" 
+                <img
+                  src="/panggung_krapyak.png"
+                  alt="Panggung Krapyak"
                   className="w-full aspect-[3/2] object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8">
@@ -108,7 +108,7 @@ const Destinasi = () => {
       {/* Ikon Budaya & Sejarah Section */}
       <section className="py-24 md:py-32 px-8 md:px-16 bg-[#FAF9F6]">
         <div className="max-w-[1400px] mx-auto">
-          
+
           {/* Section Header */}
           <div className="text-center mb-20">
             <h2 className="text-[44px] md:text-[56px] font-serif font-bold text-[#5E2B0F] mb-6">
@@ -122,36 +122,36 @@ const Destinasi = () => {
           {/* Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
             {[
-              { 
+              {
                 slug: "vredeburg",
-                title: t('destinasiPage.cultureHistory.vredeburgTitle'), 
-                desc: t('destinasiPage.cultureHistory.vredeburgDesc'), 
-                img: "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=800" 
+                title: t('destinasiPage.cultureHistory.vredeburgTitle'),
+                desc: t('destinasiPage.cultureHistory.vredeburgDesc'),
+                img: "https://images.unsplash.com/photo-1596463059283-e26744036709?auto=format&fit=crop&q=80&w=800"
               },
-              { 
+              {
                 slug: "tamansari",
-                title: t('destinasiPage.cultureHistory.tamansariTitle'), 
-                desc: t('destinasiPage.cultureHistory.tamansariDesc'), 
+                title: t('destinasiPage.cultureHistory.tamansariTitle'),
+                desc: t('destinasiPage.cultureHistory.tamansariDesc'),
                 img: "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=800",
                 badge: "AR ENABLED"
               },
-              { 
+              {
                 slug: "sonobudoyo",
-                title: t('destinasiPage.cultureHistory.sonobudoyoTitle'), 
-                desc: t('destinasiPage.cultureHistory.sonobudoyoDesc'), 
-                img: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=800" 
+                title: t('destinasiPage.cultureHistory.sonobudoyoTitle'),
+                desc: t('destinasiPage.cultureHistory.sonobudoyoDesc'),
+                img: "https://images.unsplash.com/photo-1589136109968-3e284074f762?auto=format&fit=crop&q=80&w=800"
               }
             ].map((item, idx) => (
-              <Link 
+              <Link
                 to={`/destinasi/${item.slug}`}
-                key={idx} 
+                key={idx}
                 className="bg-white rounded-[32px] overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.06)] transition-all duration-700 flex flex-col border border-gray-100/40 group cursor-pointer"
               >
                 {/* Image Area */}
                 <div className="relative overflow-hidden aspect-[4/3]">
-                  <img 
-                    src={item.img} 
-                    alt={item.title} 
+                  <img
+                    src={item.img}
+                    alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
                   {item.badge && (
@@ -169,7 +169,7 @@ const Destinasi = () => {
                   <p className="text-gray-500 text-[15px] leading-relaxed mb-10 flex-grow">
                     {item.desc}
                   </p>
-                  
+
                   {/* Action Link */}
                   <div className="flex items-center gap-4 text-[#8b6112] font-serif text-[15px] font-bold tracking-widest group/link outline-none">
                     <span>LIHAT DETAIL</span>
@@ -186,13 +186,13 @@ const Destinasi = () => {
       {/* Nadi Malioboro Section */}
       <section className="py-24 md:py-32 px-8 md:px-16 bg-[#FDFBF9]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           {/* Left: Image */}
           <div className="relative group">
             <div className="overflow-hidden rounded-[32px] shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1570714061648-2016e1d51f71?auto=format&fit=crop&q=80&w=1200" 
-                alt="Jalan Malioboro" 
+              <img
+                src="https://images.unsplash.com/photo-1570714061648-2016e1d51f71?auto=format&fit=crop&q=80&w=1200"
+                alt="Jalan Malioboro"
                 className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
@@ -208,11 +208,11 @@ const Destinasi = () => {
             <h2 className="text-[48px] md:text-[64px] font-serif font-bold text-[#5E2B0F] leading-tight mb-10">
               {t('destinasiPage.malioboro.title')}
             </h2>
-            
+
             <p className="text-gray-500 font-serif italic text-[18px] md:text-[20px] mb-8 leading-relaxed opacity-80">
               {t('destinasiPage.malioboro.quote')}
             </p>
-            
+
             <p className="text-gray-600 text-[16px] md:text-[17px] leading-relaxed mb-12">
               {t('destinasiPage.malioboro.desc')}
             </p>
