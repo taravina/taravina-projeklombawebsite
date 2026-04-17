@@ -227,11 +227,11 @@ const Kuliner = () => {
           {/* Right Illustration */}
           <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full overflow-hidden">
             <img
-              src="/kuliner_resep_heritage.png"
+              src="/makanan resep.png"
               alt="Heritage Recipe Illustration"
               className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/10"></div>
+            <div className="absolute inset-0 bg-black/5"></div>
           </div>
         </div>
       </section>

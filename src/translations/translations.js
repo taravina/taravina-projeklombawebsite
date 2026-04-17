@@ -28,6 +28,32 @@ export const translations = {
         quote: "Sultan Hamengkubuwono I tidak hanya mendirikan sebuah kota, tetapi mengukir identitas spiritual di atas tanah yang diberkati.",
         locationLabel: "LOKASI SEJARAH",
         location: "Desa Giyanti, Dukuh Kerten, Jantiharjo, Karanganyar, Jawa Tengah"
+      },
+      philosophySpace: {
+        badge: "FILOSOFI RUANG",
+        title: "Garis Imajiner: Keseimbangan Alam",
+        items: {
+          general: {
+            image: "/filosofi_umum.png",
+            title: "Hamemayu Hayuning Bawana",
+            desc: "Prinsip dasar kehidupan masyarakat Yogyakarta untuk mempercantik keindahan dunia dan menjaga harmoni alam."
+          },
+          merapi: {
+            image: "/filosofi_merapi.png",
+            title: "Gunung Merapi",
+            desc: "Elemen api yang melambangkan kekuatan maskulin dan asal muasal kehidupan."
+          },
+          keraton: {
+            image: "/filosofi_keraton.png",
+            title: "Keraton Yogyakarta",
+            desc: "Pusat kosmik dan penyeimbang antara kekuatan utara dan selatan."
+          },
+          sea: {
+            image: "/filosofi_laut.png",
+            title: "Laut Selatan",
+            desc: "Elemen air yang melambangkan sisi feminin dan tujuan akhir spiritual."
+          }
+        }
       }
     },
     navbar: {
@@ -883,6 +909,32 @@ export const translations = {
         quote: "Sultan Hamengkubuwono I did not just build a city, but carved a spiritual identity on a blessed land.",
         locationLabel: "HISTORICAL LOCATION",
         location: "Giyanti Village, Kerten Hamlet, Jantiharjo, Karanganyar, Central Java"
+      },
+      philosophySpace: {
+        badge: "SPATIAL PHILOSOPHY",
+        title: "Imaginary Axis: Cosmic Balance",
+        items: {
+          general: {
+            image: "/filosofi_umum.png",
+            title: "Hamemayu Hayuning Bawana",
+            desc: "The fundamental principle of Yogyakarta society to enhance the beauty of the world and maintain natural harmony."
+          },
+          merapi: {
+            image: "/filosofi_merapi.png",
+            title: "Mount Merapi",
+            desc: "Fire element representing masculine strength and the origin of life."
+          },
+          keraton: {
+            image: "/filosofi_keraton.png",
+            title: "The Palace",
+            desc: "Cosmic center and balancer between northern and southern forces."
+          },
+          sea: {
+            image: "/filosofi_laut.png",
+            title: "South Sea",
+            desc: "Water element representing the feminine side and the ultimate spiritual goal."
+          }
+        }
       }
     },
     navbar: {
