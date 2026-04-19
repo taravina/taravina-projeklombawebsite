@@ -246,7 +246,10 @@ export const translations = {
         event1Desc: "Perjanjian ini menandai terbentuknya Kesultanan Yogyakarta sebagai hasil pembagian Kerajaan Mataram. Sejak saat itu, Yogyakarta berkembang menjadi pusat budaya dan pemerintahan yang berpengaruh di Jawa.",
         event2Year: "1812",
         event2Title: "Geger Sepehi",
-        event2Desc: "Peristiwa penyerangan oleh pasukan Inggris ke Keraton Yogyakarta ini membawa perubahan besar dalam sistem pemerintahan dan memperlemah kekuasaan kerajaan di masa itu."
+        event2Desc: "Peristiwa penyerangan oleh pasukan Inggris ke Keraton Yogyakarta ini membawa perubahan besar dalam sistem pemerintahan dan memperlemah kekuasaan kerajaan di masa itu.",
+        event3Year: "1945",
+        event3Title: "Amanat 5 September",
+        event3Desc: "Melalui amanat ini, Yogyakarta menyatakan dukungan penuh terhadap Republik Indonesia dan menjadi bagian penting dalam perjuangan mempertahankan kemerdekaan."
       },
       items: {
         sectionTitle: "Jejak Peradaban",
@@ -425,6 +428,25 @@ export const translations = {
           subtitle: "KUALITAS HIDUP LEBIH BAIK",
           desc: "(kesehatan, keamanan, wisata digital)"
         }
+      },
+      sections: {
+        aboutTitle: "Tentang Yogyakarta Smart City",
+        aboutQuote: "Yogyakarta Smart City memadukan teknologi digital dengan nilai-nilai budaya untuk mewujudkan pelayanan publik yang lebih baik & kota yang berkelanjutan",
+        pillarsTitle: "Pilar Smart City Yogyakarta",
+        servicesTitle: "Layanan Digital Untuk Masyarakat",
+        servicesItems: [
+          "Portal Layanan Terpadu",
+          "Data Terbuka & Informasi Kota",
+          "Informasi Wisata & Budaya",
+          "Sistem Pengaduan Masyarakat"
+        ],
+        cultureTitle: "Budaya & Keraton dalam Era Digital",
+        cultureItems: [
+          "Digitalisasi arsip & naskah kuno",
+          "Promosi event & festival budaya",
+          "Kolaborasi teknologi & tradisi"
+        ],
+        videoSectionTitle: "Video Visual Yogyakarta Smart City"
       }
     },
     tokohPage: {
@@ -1127,7 +1149,10 @@ export const translations = {
         event1Desc: "This agreement marked the formation of the Yogyakarta Sultanate as a result of the division of the Mataram Kingdom. Since then, Yogyakarta has developed into an influential cultural and governmental center in Java.",
         event2Year: "1812",
         event2Title: "Geger Sepehi",
-        event2Desc: "The attack by British forces on the Yogyakarta Palace brought major changes in the government system and weakened the kingdom's power at that time."
+        event2Desc: "The attack by British forces on the Yogyakarta Palace brought major changes in the government system and weakened the kingdom's power at that time.",
+        event3Year: "1945",
+        event3Title: "September 5th Mandate",
+        event3Desc: "Through this mandate, Yogyakarta declared its full support for the Republic of Indonesia and became a vital part of the struggle to maintain independence."
       },
       items: {
         sectionTitle: "Jejak Peradaban",
@@ -1306,6 +1331,25 @@ export const translations = {
           subtitle: "BETTER QUALITY OF LIFE",
           desc: "(health, security, digital tourism)"
         }
+      },
+      sections: {
+        aboutTitle: "About Yogyakarta Smart City",
+        aboutQuote: "Yogyakarta Smart City blends digital technology with cultural values to realize better public services & a sustainable city",
+        pillarsTitle: "Yogyakarta Smart City Pillars",
+        servicesTitle: "Digital Services for Community",
+        servicesItems: [
+          "Integrated Service Portal",
+          "Open Data & City Information",
+          "Tourism & Culture Information",
+          "Community Complaint System"
+        ],
+        cultureTitle: "Culture & Palace in the Digital Era",
+        cultureItems: [
+          "Digitalization of archives & ancient manuscripts",
+          "Promotion of events & cultural festivals",
+          "Collaboration of technology & tradition"
+        ],
+        videoSectionTitle: "Digital Video Showcase of Smart City"
       }
     },
     tokohPage: {
