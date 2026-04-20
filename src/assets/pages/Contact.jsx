@@ -37,7 +37,17 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-[#5e2b0f] font-bold text-sm tracking-widest uppercase mb-1">Email</h3>
-                <p className="text-gray-500">heritage@jogja.go.id</p>
+                <p className="text-gray-500 font-medium">kontak@_13trvnhsvh</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-6">
+              <div className="w-12 h-12 bg-[#FCF9F7] rounded-xl flex items-center justify-center text-[#8b6112]">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <div>
+                <h3 className="text-[#5e2b0f] font-bold text-sm tracking-widest uppercase mb-1">Instagram</h3>
+                <a href="https://www.instagram.com/_13trvnhsvh" target="_blank" rel="noopener noreferrer" className="text-gray-500 font-medium hover:text-[#8b6112] transition-colors">@_13trvnhsvh</a>
               </div>
             </div>
 
@@ -50,7 +60,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-[#5e2b0f] font-bold text-sm tracking-widest uppercase mb-1">Location</h3>
-                <p className="text-gray-500">Jl. Malioboro No. 175, Yogyakarta, Indonesia</p>
+                <p className="text-gray-500 font-medium">Jl. Malioboro No. 175, Yogyakarta</p>
               </div>
             </div>
           </div>

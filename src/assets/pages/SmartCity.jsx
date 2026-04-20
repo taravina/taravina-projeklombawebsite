@@ -199,7 +199,7 @@ const SmartCity = () => {
               }}
             >
               <source src="/vidiojogja.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              {t('smartCityPage.sections.videoSection.videoError')}
             </video>
             
             {/* Cinematic Overlay (only visible when not playing or on hover) */}
@@ -229,14 +229,14 @@ const SmartCity = () => {
                 ))}
               </div>
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
-                {isPlaying ? 'SOUND ON' : 'SOUND OFF'}
+                {isPlaying ? t('smartCityPage.sections.videoSection.soundOn') : t('smartCityPage.sections.videoSection.soundOff')}
               </span>
             </button>
 
             {/* Subtle Label */}
             <div className="absolute bottom-8 left-8 text-white text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-1 opacity-70">CINEMATIC VIDEO</p>
-              <h4 className="text-xl font-serif font-bold">Yogyakarta Digital Heritage</h4>
+              <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-1 opacity-70">{t('smartCityPage.sections.videoSection.cinematicLabel')}</p>
+              <h4 className="text-xl font-serif font-bold">{t('smartCityPage.sections.videoSection.videoTitle')}</h4>
             </div>
           </div>
         </div>

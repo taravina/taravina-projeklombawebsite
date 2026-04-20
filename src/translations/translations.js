@@ -409,22 +409,22 @@ export const translations = {
       },
       pillars: {
         governance: {
-          title: "Smart Governance",
+          title: "Tata Kelola Cerdas",
           subtitle: "LAYANAN PUBLIK DIGITAL",
           desc: "(e-KTP, perizinan, pengaduan online)"
         },
         economy: {
-          title: "Smart Economy",
+          title: "Ekonomi Cerdas",
           subtitle: "EKONOMI BERBASIS TEKNOLOGI",
           desc: "(UMKM digital, cashless, marketplace)"
         },
         environment: {
-          title: "Smart Environment",
+          title: "Lingkungan Cerdas",
           subtitle: "PENGELOLAAN LINGKUNGAN CERDAS",
           desc: "(energi terbarukan, limbah, sensor polusi)"
         },
         living: {
-          title: "Smart Living",
+          title: "Kehidupan Cerdas",
           subtitle: "KUALITAS HIDUP LEBIH BAIK",
           desc: "(kesehatan, keamanan, wisata digital)"
         }
@@ -446,7 +446,14 @@ export const translations = {
           "Promosi event & festival budaya",
           "Kolaborasi teknologi & tradisi"
         ],
-        videoSectionTitle: "Video Visual Yogyakarta Smart City"
+        videoSectionTitle: "Video Visual Yogyakarta Smart City",
+        videoSection: {
+          soundOn: "SUARA NYALA",
+          soundOff: "SUARA MATI",
+          cinematicLabel: "VIDEO SINEMATIK",
+          videoTitle: "Warisan Digital Yogyakarta",
+          videoError: "Browser Anda tidak mendukung tag video."
+        }
       }
     },
     tokohPage: {
@@ -1349,7 +1356,14 @@ export const translations = {
           "Promotion of events & cultural festivals",
           "Collaboration of technology & tradition"
         ],
-        videoSectionTitle: "Digital Video Showcase of Smart City"
+        videoSectionTitle: "Digital Video Showcase of Smart City",
+        videoSection: {
+          soundOn: "SOUND ON",
+          soundOff: "SOUND OFF",
+          cinematicLabel: "CINEMATIC VIDEO",
+          videoTitle: "Yogyakarta Digital Heritage",
+          videoError: "Your browser does not support the video tag."
+        }
       }
     },
     tokohPage: {
