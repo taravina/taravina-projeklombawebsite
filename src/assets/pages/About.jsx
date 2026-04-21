@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
 const About = () => {
   const { t } = useLanguage();
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FCF9F7] flex items-center justify-center px-8 py-24">
-      <div className="max-w-4xl w-full bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+      <div className="max-w-4xl w-full bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col md:flex-row reveal-on-scroll zoom-in">
         {/* Left Side: Image */}
         <div className="md:w-1/2 h-[300px] md:h-auto relative">
           <img 

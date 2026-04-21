@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from "../../context/LanguageContext";
 
 const Destinasi = () => {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FAF9F6]">
@@ -37,11 +58,6 @@ const Destinasi = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-[11px] font-bold tracking-widest uppercase opacity-70">Scroll</span>
-          <div className="w-[1px] h-12 bg-white/50"></div>
-        </div>
       </section>
       {/* Sumbu Filosofis Section */}
       <section className="px-8 md:px-16 pt-24 md:pt-32 pb-16 md:pb-24 bg-[#FAF9F6]">
@@ -51,10 +67,10 @@ const Destinasi = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <div className="w-20 h-1.5 bg-[#8B6112] mb-10"></div>
-              <h2 className="text-[48px] md:text-[60px] font-serif font-bold text-[#5E2B0F] leading-tight mb-8">
+              <h2 className="text-[48px] md:text-[60px] font-serif font-bold text-[#5E2B0F] leading-tight mb-8 reveal-on-scroll fade-in-up">
                 {t('destinasiPage.sumbuFilosofis.title')}
               </h2>
-              <p className="text-gray-500 text-[18px] leading-relaxed">
+              <p className="text-gray-500 text-[18px] leading-relaxed reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
                 {t('destinasiPage.sumbuFilosofis.desc')}
               </p>
             </div>
@@ -69,7 +85,7 @@ const Destinasi = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
 
             {/* Left Image: Keraton */}
-            <div className="md:col-span-7 group">
+            <div className="md:col-span-7 group reveal-on-scroll fade-in-left">
               <div className="overflow-hidden rounded-[24px] shadow-2xl mb-8">
                 <img
                   src="/keraton.png"
@@ -83,7 +99,7 @@ const Destinasi = () => {
             </div>
 
             {/* Right Image: Panggung Krapyak */}
-            <div className="md:col-span-5 mt-0 md:mt-24">
+            <div className="md:col-span-5 mt-0 md:mt-24 reveal-on-scroll fade-in-right">
               <div className="relative group overflow-hidden rounded-[24px] shadow-xl mb-6">
                 <img
                   src="/panggung_krapyak.png"
@@ -145,7 +161,8 @@ const Destinasi = () => {
               <Link
                 to={`/destinasi/${item.slug}`}
                 key={idx}
-                className="bg-white rounded-[32px] overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.06)] transition-all duration-700 flex flex-col border border-gray-100/40 group cursor-pointer"
+                className="bg-white rounded-[32px] overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.06)] transition-all duration-700 flex flex-col border border-gray-100/40 group cursor-pointer reveal-on-scroll fade-in-up"
+                style={{ transitionDelay: `${idx * 0.1}s` }}
               >
                 {/* Image Area */}
                 <div className="relative overflow-hidden aspect-[4/3]">
@@ -188,7 +205,7 @@ const Destinasi = () => {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
           {/* Left: Image */}
-          <div className="relative group">
+          <div className="relative group reveal-on-scroll fade-in-left">
             <div className="overflow-hidden">
               <img
                 src="/jalan_malioboro.png"
@@ -201,7 +218,7 @@ const Destinasi = () => {
           </div>
 
           {/* Right: Content */}
-          <div className="max-w-xl">
+          <div className="max-w-xl reveal-on-scroll fade-in-right">
             <p className="text-[#8B6112] text-[12px] font-bold tracking-[0.3em] uppercase mb-6">
               {t('destinasiPage.malioboro.tag')}
             </p>

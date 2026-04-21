@@ -51,6 +51,27 @@ const Sejarah = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-[#FCF9F7]">
       {/* Hero Section */}
@@ -136,10 +157,10 @@ const Sejarah = () => {
           {/* Section Header */}
           <div className="mb-20 animate-fade-in">
             <div className="w-16 h-1 bg-[#8b6112] mb-8"></div>
-            <h2 className="text-[42px] md:text-[52px] font-serif font-bold text-[#5e2b0f] mb-6 leading-tight">
+            <h2 className="text-[42px] md:text-[52px] font-serif font-bold text-[#5e2b0f] mb-6 leading-tight reveal-on-scroll fade-in-up">
               {t('sejarahPage.timeline.title')}
             </h2>
-            <p className="text-gray-500 text-[16px] md:text-[18px] max-w-2xl leading-relaxed opacity-80">
+            <p className="text-gray-500 text-[16px] md:text-[18px] max-w-2xl leading-relaxed opacity-80 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
               {t('sejarahPage.timeline.desc')}
             </p>
           </div>
@@ -149,7 +170,7 @@ const Sejarah = () => {
             <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gray-200 hidden md:block"></div>
 
             {/* Event 1: 1755 */}
-            <div className="flex flex-col md:flex-row items-center mb-32 relative">
+            <div className="flex flex-col md:flex-row items-center mb-32 relative reveal-on-scroll fade-in-up">
               <div className="w-full md:w-1/2 pr-0 md:pr-20 text-center md:text-right mb-12 md:mb-0 order-2 md:order-1">
                 <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-200 block mb-2 leading-none">{t('sejarahPage.timeline.event1Year')}</span>
                 <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-4">{t('sejarahPage.timeline.event1Title')}</h3>
@@ -170,7 +191,7 @@ const Sejarah = () => {
             </div>
 
             {/* Event 2: 1812 */}
-            <div className="flex flex-col md:flex-row items-center mb-32 relative">
+            <div className="flex flex-col md:flex-row items-center mb-32 relative reveal-on-scroll fade-in-up">
               <div className="w-full md:w-1/2 pr-0 md:pr-20 order-1 md:order-1 mb-8 md:mb-0">
                 <div className="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/3] perspective-2000 bg-[#EADCCB]">
                   {event2Images.map((img, index) => (
@@ -190,7 +211,7 @@ const Sejarah = () => {
             </div>
 
             {/* Event 3: 1945 */}
-            <div className="flex flex-col md:flex-row items-center mb-12 relative">
+            <div className="flex flex-col md:flex-row items-center mb-12 relative reveal-on-scroll fade-in-up">
               <div className="w-full md:w-1/2 pr-0 md:pr-20 text-center md:text-right mb-12 md:mb-0 order-2 md:order-1">
                 <span className="text-[64px] md:text-[84px] font-serif font-bold text-gray-200 block mb-2 leading-none">{t('sejarahPage.timeline.event3Year')}</span>
                 <h3 className="text-[28px] md:text-[32px] font-serif font-bold text-[#5e2b0f] mb-4">{t('sejarahPage.timeline.event3Title')}</h3>
@@ -222,7 +243,7 @@ const Sejarah = () => {
 
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* HB I Card */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[320px] border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[320px] border border-gray-100 reveal-on-scroll fade-in-left">
             <div className="w-full md:w-[280px] flex-shrink-0 bg-gray-50 relative overflow-hidden perspective-2000">
                {hb1Images.map((img, index) => (
                 <div key={img} className={`absolute inset-0 w-full h-full book-page ${index === hb1Index ? 'book-page-active' : 'book-page-flipped'}`}>
@@ -237,7 +258,7 @@ const Sejarah = () => {
           </div>
 
           {/* HB IX Card */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[320px] border border-gray-100">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[320px] border border-gray-100 reveal-on-scroll fade-in-right">
             <div className="w-full md:w-[280px] flex-shrink-0 bg-gray-50 relative overflow-hidden perspective-2000">
                {hb9Images.map((img, index) => (
                 <div key={img} className={`absolute inset-0 w-full h-full book-page ${index === hb9Index ? 'book-page-active' : 'book-page-flipped'}`}>

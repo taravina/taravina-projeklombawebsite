@@ -8,6 +8,27 @@ const Kuliner = () => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const dropdownRef = React.useRef(null);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const filters = ['Semua', 'Favorit', 'Terpopuler', 'Terlaris'];
 
   const foodItems = [
@@ -159,7 +180,7 @@ const Kuliner = () => {
             {filteredItems.map((item) => (
               <div 
                 key={item.id} 
-                className={`bg-white rounded-[32px] overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.06)] transition-all duration-700 flex flex-col border border-gray-100/40 group ${
+                className={`bg-white rounded-[32px] overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.06)] transition-all duration-700 flex flex-col border border-gray-100/40 group reveal-on-scroll fade-in-up ${
                   item.isLarge ? 'md:col-span-2' : ''
                 }`}
               >
@@ -206,7 +227,7 @@ const Kuliner = () => {
 
       {/* Heritage Recipe Card Section */}
       <section className="px-8 md:px-16 py-12 md:py-20">
-        <div className="max-w-[1240px] mx-auto overflow-hidden rounded-[32px] bg-[#5E2B0F] shadow-2xl flex flex-col lg:flex-row relative group">
+        <div className="max-w-[1240px] mx-auto overflow-hidden rounded-[32px] bg-[#5E2B0F] shadow-2xl flex flex-col lg:flex-row relative group reveal-on-scroll zoom-in">
           {/* Left Content */}
           <div className="p-10 md:p-16 lg:w-1/2 text-white flex flex-col justify-center">
             <h2 className="text-[32px] md:text-[44px] font-serif font-bold mb-6 leading-tight whitespace-pre-line">
@@ -238,7 +259,7 @@ const Kuliner = () => {
 
       {/* Filosofi Saji Section */}
       <section id="filosofi" className="px-8 md:px-16 py-20 md:py-32 bg-white text-center">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto reveal-on-scroll fade-in-up">
           {/* Temple Icon */}
           <div className="flex justify-center mb-8">
             <svg className="w-12 h-12 text-[#8b6112]" viewBox="0 0 24 24" fill="currentColor">

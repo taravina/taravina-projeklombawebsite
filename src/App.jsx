@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Navbar from "./assets/components/Navbar";
 import ScrollToTop from "./assets/components/ScrollToTop";
@@ -20,25 +20,31 @@ import AsalUsul from "./assets/pages/AsalUsul";
 
 const AppContent = () => {
   const { language } = useLanguage();
+  const location = useLocation();
 
   return (
-    <div key={language} className="animate-page-switch">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F6]">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/kuliner" element={<Kuliner />} />
-        <Route path="/sejarah" element={<Sejarah />} />
-        <Route path="/asal-usul" element={<AsalUsul />} />
-        <Route path="/tokoh" element={<Tokoh />} />
-        <Route path="/peristiwa" element={<Peristiwa />} />
-        <Route path="/budaya" element={<Budaya />} />
-        <Route path="/destinasi" element={<Destinasi />} />
-        <Route path="/destinasi/:slug" element={<DestinasiDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/smart-city" element={<SmartCity />} />
-        <Route path="/menu-resep" element={<MenuResep />} />
-      </Routes>
+      <div 
+        key={`${location.pathname}-${language}`} 
+        className="flex-grow animate-page-switch overflow-hidden"
+      >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/kuliner" element={<Kuliner />} />
+          <Route path="/sejarah" element={<Sejarah />} />
+          <Route path="/asal-usul" element={<AsalUsul />} />
+          <Route path="/tokoh" element={<Tokoh />} />
+          <Route path="/peristiwa" element={<Peristiwa />} />
+          <Route path="/budaya" element={<Budaya />} />
+          <Route path="/destinasi" element={<Destinasi />} />
+          <Route path="/destinasi/:slug" element={<DestinasiDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/smart-city" element={<SmartCity />} />
+          <Route path="/menu-resep" element={<MenuResep />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );

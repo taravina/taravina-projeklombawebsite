@@ -24,7 +24,7 @@ const AsalUsul = () => {
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-section');
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
     animatedElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -32,35 +32,6 @@ const AsalUsul = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFBF9] overflow-x-hidden">
-      <style>{`
-        .reveal-on-scroll { opacity: 0; }
-        .active-animation.fade-in-up { animation: fade-in-up 1.2s ease-out forwards; }
-        .active-animation.fade-in-left { animation: fade-in-left 1.2s ease-out forwards; }
-        .active-animation.fade-in-right { animation: fade-in-right 1.2s ease-out forwards; }
-        .active-animation.zoom-in { animation: zoom-in 1s ease-out forwards; }
-        .active-animation.fade-in { animation: fade-in 1.5s ease-out forwards; }
-
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fade-in-left {
-          from { opacity: 0; transform: translateX(-50px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes fade-in-right {
-          from { opacity: 0; transform: translateX(50px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes zoom-in {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-      `}</style>
 
       {/* Hero Section - Mirroring the User's Image Design */}
       <section 
@@ -70,7 +41,7 @@ const AsalUsul = () => {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Content */}
-          <div className={`reveal-on-scroll ${visibleSections['hero'] ? 'active-animation fade-in-left' : ''}`}>
+          <div className="reveal-on-scroll fade-in-left">
             <span className="text-[#8B6112] font-bold text-sm tracking-[0.3em] uppercase mb-8 block">
               {t('asalUsulPage.hero.badge')}
             </span>
@@ -94,7 +65,7 @@ const AsalUsul = () => {
           </div>
 
           {/* Right Content - Visual Frame */}
-          <div className={`relative reveal-on-scroll ${visibleSections['hero'] ? 'active-animation fade-in-right' : ''}`} style={{ transitionDelay: '0.4s' }}>
+          <div className="relative reveal-on-scroll fade-in-right" style={{ transitionDelay: '0.4s' }}>
             <div className="relative z-10 bg-white p-4 shadow-[0_30px_60px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group">
               <img 
                 src="/giyanti_archway.png" 
@@ -127,7 +98,7 @@ const AsalUsul = () => {
       >
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className={`reveal-on-scroll ${visibleSections['philosophy'] ? 'active-animation fade-in-left' : ''}`}>
+            <div className="reveal-on-scroll fade-in-left">
               <h2 className="font-serif text-[40px] md:text-[56px] text-[#5E2B0F] font-bold mb-8 leading-tight">
                 {t('asalUsulPage.philosophy.title')}
               </h2>
@@ -147,7 +118,7 @@ const AsalUsul = () => {
               </div>
             </div>
             
-            <div className={`relative reveal-on-scroll ${visibleSections['philosophy'] ? 'active-animation zoom-in' : ''}`} style={{ transitionDelay: '0.3s' }}>
+            <div className="relative reveal-on-scroll zoom-in" style={{ transitionDelay: '0.3s' }}>
               <div className="aspect-square bg-[#EADCCB] rounded-full overflow-hidden p-12">
                 <div className="w-full h-full rounded-full overflow-hidden border-8 border-white shadow-inner">
                   <img 
@@ -168,7 +139,7 @@ const AsalUsul = () => {
         className="px-8 md:px-16 py-24 md:py-32 animate-section"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <div className={`reveal-on-scroll ${visibleSections['history'] ? 'active-animation fade-in-up' : ''}`}>
+          <div className="reveal-on-scroll fade-in-up">
             <span className="text-[#8B6112] font-bold text-[14px] tracking-[0.4em] uppercase mb-6 block">
               {t('asalUsulPage.history.title')}
             </span>
@@ -192,7 +163,7 @@ const AsalUsul = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
             
             {/* Left Content: Text & Quote */}
-            <div className={`reveal-on-scroll ${visibleSections['giyanti'] ? 'active-animation fade-in-left' : ''}`}>
+            <div className="reveal-on-scroll fade-in-left">
               <div className="w-32 h-[2px] bg-[#8B6112]/30 mb-12"></div>
               <h2 className="font-serif text-[44px] md:text-[60px] lg:text-[72px] font-bold text-[#5E2B0F] leading-[1.1] mb-12">
                 {t('asalUsulPage.giyanti.title')}
@@ -216,7 +187,7 @@ const AsalUsul = () => {
             </div>
 
             {/* Right Content: Archival Image & Location Badge */}
-            <div className={`relative reveal-on-scroll ${visibleSections['giyanti'] ? 'active-animation fade-in-right' : ''}`} style={{ transitionDelay: '0.3s' }}>
+            <div className="relative reveal-on-scroll fade-in-right" style={{ transitionDelay: '0.3s' }}>
               <div className="relative z-10 group">
                 {/* Archival Image Frame */}
                 <div className="bg-[#FAF7F2] p-4 md:p-6 shadow-2xl border border-[#EADCCB]">
@@ -252,7 +223,7 @@ const AsalUsul = () => {
       <section id="spatial" className="px-8 md:px-16 py-24 md:py-40 animate-section flex flex-col items-center bg-[#FDFBF9]">
         <div className="max-w-[1400px] w-full flex flex-col items-center">
           {/* Header */}
-          <div className={`text-center mb-16 reveal-on-scroll ${visibleSections['spatial'] ? 'active-animation fade-in-up' : ''}`}>
+          <div className="text-center mb-16 reveal-on-scroll fade-in-up">
             <span className="text-[#8B6112] font-bold text-[14px] tracking-[0.4em] uppercase mb-4 block">
               {t('asalUsulPage.philosophySpace.badge')}
             </span>
@@ -262,7 +233,7 @@ const AsalUsul = () => {
           </div>
 
           {/* Main Interactive Banner */}
-          <div className={`w-full max-w-[1240px] mb-20 relative overflow-hidden rounded-[40px] shadow-3xl aspect-[21/9] md:aspect-[21/7] reveal-on-scroll ${visibleSections['spatial'] ? 'active-animation zoom-in' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          <div className="w-full max-w-[1240px] mb-20 relative overflow-hidden rounded-[40px] shadow-3xl aspect-[21/9] md:aspect-[21/7] reveal-on-scroll zoom-in" style={{ transitionDelay: '0.2s' }}>
             {Object.keys(t('asalUsulPage.philosophySpace.items')).map((key) => (
               <div 
                 key={key}
@@ -288,7 +259,7 @@ const AsalUsul = () => {
           </div>
 
           {/* Icon Cards Grid */}
-          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1240px] reveal-on-scroll ${visibleSections['spatial'] ? 'active-animation fade-in-up' : ''}`} style={{ transitionDelay: '0.4s' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1240px] reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.4s' }}>
             {[
               { id: 'merapi', icon: 'M12 2L2 22h20L12 2zm0 4.5l6.5 11.5H5.5L12 6.5z' },
               { id: 'keraton', icon: 'M3 10V21H21V10L12 2L3 10ZM12 5.5L19 11.75V19H5V11.75L12 5.5ZM10 13H14V17H10V13Z' },

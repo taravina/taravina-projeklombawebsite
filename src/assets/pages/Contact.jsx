@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 
 const Contact = () => {
   const { t } = useLanguage();
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FCF9F7] flex items-center justify-center px-8 py-24">
       <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side: Illustration/Image */}
-        <div className="relative rounded-[40px] overflow-hidden shadow-2xl aspect-square lg:aspect-auto h-full min-h-[400px]">
+        <div className="relative rounded-[40px] overflow-hidden shadow-2xl aspect-square lg:aspect-auto h-full min-h-[400px] reveal-on-scroll fade-in-left">
           <img 
             src="/mataram.png" 
             alt="Contact Us" 
@@ -23,7 +44,7 @@ const Contact = () => {
         </div>
 
         {/* Right Side: Info Card */}
-        <div className="bg-white p-10 md:p-16 rounded-[40px] shadow-xl border border-gray-100">
+        <div className="bg-white p-10 md:p-16 rounded-[40px] shadow-xl border border-gray-100 reveal-on-scroll fade-in-right">
           <p className="text-gray-500 text-[18px] leading-relaxed mb-12">
             {t('contactPage.desc')}
           </p>

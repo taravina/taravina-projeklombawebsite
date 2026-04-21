@@ -91,15 +91,6 @@ const Home = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <style>{`
-        .reveal-on-scroll { opacity: 0; }
-        .active-animation.fade-in-up { animation: fade-in-up 1.2s ease-out forwards; }
-        .active-animation.fade-in-left { animation: fade-in-left 1.2s ease-out forwards; }
-        .active-animation.fade-in-right { animation: fade-in-right 1.2s ease-out forwards; }
-        .active-animation.zoom-in { animation: zoom-in 1s ease-out forwards; }
-        .active-animation.fade-in { animation: fade-in 1.5s ease-out forwards; }
-        .active-animation.scale-up { animation: scale-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-      `}</style>
 
       {/* Hero Section */}
       <div 

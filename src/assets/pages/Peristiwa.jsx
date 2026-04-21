@@ -25,7 +25,7 @@ const Peristiwa = () => {
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-section');
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
     animatedElements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -67,26 +67,6 @@ const Peristiwa = () => {
 
   return (
     <div className="min-h-screen bg-[#FCF9F7] overflow-x-hidden">
-      <style>{`
-        .reveal-on-scroll { opacity: 0; }
-        .active-animation.fade-in-up { animation: fade-in-up 1.2s ease-out forwards; }
-        .active-animation.fade-in-left { animation: fade-in-left 1.2s ease-out forwards; }
-        .active-animation.fade-in-right { animation: fade-in-right 1.2s ease-out forwards; }
-        .active-animation.zoom-in { animation: zoom-in 1s ease-out forwards; }
-        .active-animation.fade-in { animation: fade-in 1.5s ease-out forwards; }
-        
-        @keyframes reveal-box {
-          from { transform: scaleX(0); }
-          to { transform: scaleX(1); }
-        }
-        .reveal-box {
-          transform: scaleX(0);
-          transform-origin: left;
-        }
-        .reveal-box.active {
-          animation: reveal-box 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-        }
-      `}</style>
 
       {/* Hero Section */}
       <section
@@ -96,7 +76,7 @@ const Peristiwa = () => {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
           {/* Left Content */}
-          <div className={`relative z-10 reveal-on-scroll ${visibleSections['hero'] ? 'active-animation fade-in-left' : ''}`}>
+          <div className="relative z-10 reveal-on-scroll fade-in-left">
             <div className="w-20 h-1 bg-[#8B6112] mb-10"></div>
             <span className="text-[#8B6112] font-bold text-xs md:text-sm tracking-[0.25em] uppercase mb-6 block">
               {t('peristiwaPage.hero.subtitle')}
@@ -111,7 +91,7 @@ const Peristiwa = () => {
           </div>
 
           {/* Right Content: Framed Image */}
-          <div className={`relative reveal-on-scroll ${visibleSections['hero'] ? 'active-animation zoom-in' : ''}`} style={{ transitionDelay: '0.3s' }}>
+          <div className="relative reveal-on-scroll zoom-in" style={{ transitionDelay: '0.3s' }}>
             <div className="absolute -bottom-10 -left-10 w-64 h-80 bg-[#F5E6D3] opacity-50 rounded-2xl -z-10 transform -rotate-6"></div>
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#E5D5C3] opacity-30 rounded-full -z-10"></div>
 
@@ -133,13 +113,13 @@ const Peristiwa = () => {
         id="geger"
         className="px-8 md:px-16 py-24 md:py-32 relative animate-section"
       >
-        <div className={`absolute top-0 left-10 md:left-24 font-serif text-[180px] md:text-[320px] lg:text-[450px] font-black text-[#5e2b0f]/[0.03] select-none pointer-events-none -z-10 leading-none reveal-on-scroll ${visibleSections['geger'] ? 'active-animation fade-in' : ''}`} style={{ animationDuration: '2s' }}>
+        <div className="absolute top-0 left-10 md:left-24 font-serif text-[180px] md:text-[320px] lg:text-[450px] font-black text-[#5e2b0f]/[0.03] select-none pointer-events-none -z-10 leading-none reveal-on-scroll fade-in" style={{ animationDuration: '2s' }}>
           1812
         </div>
 
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-          <div className={`reveal-on-scroll ${visibleSections['geger'] ? 'active-animation fade-in-left' : ''}`}>
+          <div className="reveal-on-scroll fade-in-left">
             <div className="inline-block bg-[#5e2b0f] text-white px-4 py-1.5 text-[10px] md:text-[12px] font-bold tracking-[0.2em] mb-8 uppercase">
               {t('peristiwaPage.gegerSepehi.tag')}
             </div>
@@ -161,7 +141,7 @@ const Peristiwa = () => {
           </div>
 
           <div className="relative grid grid-cols-2 gap-6">
-            <div className={`col-span-2 mb-6 transform -rotate-2 hover:rotate-0 transition-all duration-700 reveal-on-scroll ${visibleSections['geger'] ? 'active-animation fade-in-up' : ''}`}>
+            <div className="col-span-2 mb-6 transform -rotate-2 hover:rotate-0 transition-all duration-700 reveal-on-scroll fade-in-up">
               <div className="bg-white p-3 shadow-2xl overflow-hidden rounded-sm">
                 <img
                   src="/museum_heritage.png"
@@ -171,7 +151,7 @@ const Peristiwa = () => {
               </div>
             </div>
 
-            <div className={`transform rotate-3 hover:rotate-0 transition-all duration-700 reveal-on-scroll ${visibleSections['geger'] ? 'active-animation fade-in-up' : ''}`} style={{ transitionDelay: '0.2s' }}>
+            <div className="transform rotate-3 hover:rotate-0 transition-all duration-700 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.2s' }}>
               <div className="bg-white p-2 shadow-xl overflow-hidden rounded-sm">
                 <img
                   src="/wayang_artifacts.png"
@@ -181,7 +161,7 @@ const Peristiwa = () => {
               </div>
             </div>
 
-            <div className={`transform -rotate-6 translate-y-8 hover:rotate-0 transition-all duration-700 reveal-on-scroll ${visibleSections['geger'] ? 'active-animation fade-in-up' : ''}`} style={{ transitionDelay: '0.4s' }}>
+            <div className="transform -rotate-6 translate-y-8 hover:rotate-0 transition-all duration-700 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.4s' }}>
               <div className="bg-white p-2 shadow-xl overflow-hidden rounded-sm">
                 <img
                   src="/monument.png"
@@ -201,7 +181,7 @@ const Peristiwa = () => {
       >
         <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
 
-          <div className={`w-full lg:w-1/2 reveal-on-scroll ${visibleSections['september'] ? 'active-animation fade-in-left' : ''}`}>
+          <div className="w-full lg:w-1/2 reveal-on-scroll fade-in-left">
             <div className="relative group p-3 bg-white shadow-xl border border-[#8B6112]/20">
               <div className="relative overflow-hidden aspect-[1/1]">
                 <img
@@ -213,7 +193,7 @@ const Peristiwa = () => {
             </div>
           </div>
 
-          <div className={`w-full lg:w-1/2 reveal-on-scroll ${visibleSections['september'] ? 'active-animation fade-in-right' : ''}`}>
+          <div className="w-full lg:w-1/2 reveal-on-scroll fade-in-right">
             <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block">
               {t('peristiwaPage.september.tag')}
             </span>
@@ -247,7 +227,7 @@ const Peristiwa = () => {
       >
         <div className="max-w-[1400px] mx-auto text-center">
 
-          <div className={`mb-16 reveal-on-scroll ${visibleSections['revolusi'] ? 'active-animation fade-in-up' : ''}`}>
+          <div className="mb-16 reveal-on-scroll fade-in-up">
             <h2 className="font-serif text-[44px] md:text-[60px] text-[#5e2b0f] font-bold mb-4">
               {t('peristiwaPage.revolusi.title')}
             </h2>
@@ -256,7 +236,7 @@ const Peristiwa = () => {
             </p>
           </div>
 
-          <div className={`mb-24 flex justify-center reveal-on-scroll ${visibleSections['revolusi'] ? 'active-animation zoom-in' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          <div className="mb-24 flex justify-center reveal-on-scroll zoom-in" style={{ transitionDelay: '0.2s' }}>
             <div className="relative max-w-4xl w-full">
               <div className="bg-white p-3 md:p-4 rounded-[24px] shadow-2xl border border-gray-100">
                 <div className="overflow-hidden rounded-[16px] aspect-[16/8]">
@@ -274,8 +254,7 @@ const Peristiwa = () => {
             {revolutionCards.map((card, i) => (
               <div
                 key={card.id}
-                className={`bg-white rounded-[32px] p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border transition-all duration-500 reveal-on-scroll ${visibleSections['revolusi'] ? 'active-animation fade-in-up' : ''
-                  } ${expandedCard === card.id ? 'border-[#8B6112]/50 shadow-2xl' : 'border-gray-100 shadow-sm'}`}
+                className={`bg-white rounded-[32px] p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border transition-all duration-500 reveal-on-scroll fade-in-up ${expandedCard === card.id ? 'border-[#8B6112]/50 shadow-2xl' : 'border-gray-100 shadow-sm'}`}
                 style={{ transitionDelay: `${0.3 + i * 0.15}s` }}
               >
                 <div className="flex justify-center mb-8">

@@ -7,6 +7,25 @@ const Budaya = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -48,7 +67,7 @@ const Budaya = () => {
       {/* Filosofi Kasultanan Section */}
       <section id="tradisi" className="w-full py-24 px-6 md:px-12 bg-white">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="reveal-on-scroll fade-in-left">
             {/* Gold Accent Line */}
             <div className="w-24 h-1 bg-[#C5A358] mb-8"></div>
             
@@ -82,7 +101,7 @@ const Budaya = () => {
           </div>
 
           {/* Palace Interior Image */}
-          <div className="relative h-[600px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative h-[600px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl reveal-on-scroll fade-in-right">
             <img 
               src="/mataram.png" 
               alt="Interior Keraton Yogyakarta" 
@@ -100,7 +119,7 @@ const Budaya = () => {
           {/* Top Row: 3 Items */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
             {/* Wayang Kulit */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 reveal-on-scroll fade-in-up">
               <div className="h-[350px] overflow-hidden">
                 <img 
                   src="/budaya_wayang.png" 
@@ -117,7 +136,7 @@ const Budaya = () => {
             </div>
 
             {/* Gamelan */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
               <div className="h-[350px] overflow-hidden">
                 <img 
                   src="/budaya_gamelan.png" 
@@ -134,7 +153,7 @@ const Budaya = () => {
             </div>
 
             {/* Tari Serimpi */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.2s' }}>
               <div className="h-[350px] overflow-hidden">
                 <img 
                   src="/budaya_serimpi.png" 
@@ -154,7 +173,7 @@ const Budaya = () => {
           {/* Bottom Row: 2 Items Centered */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-center gap-10">
             {/* Tari Bedhaya */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 lg:w-[calc(33.333%-1.66rem)]">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 lg:w-[calc(33.333%-1.66rem)] reveal-on-scroll fade-in-up">
               <div className="h-[350px] overflow-hidden">
                 <img 
                   src="/budaya_bedhaya.png" 
@@ -171,7 +190,7 @@ const Budaya = () => {
             </div>
 
             {/* Sendratari Ramayana */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 lg:w-[calc(33.333%-1.66rem)]">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 lg:w-[calc(33.333%-1.66rem)] reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
               <div className="h-[350px] overflow-hidden">
                 <img 
                   src="/budaya_ramayana.png" 
@@ -193,7 +212,7 @@ const Budaya = () => {
       {/* Upacara Sakral Section */}
       <section className="w-full bg-[#EFEBE8] py-24 px-6 md:px-12">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
+          <div className="relative reveal-on-scroll fade-in-left">
             <div className="bg-white p-4 shadow-2xl rounded-sm transform -rotate-2">
               <img 
                 src="/Sekaten.png" 
@@ -206,7 +225,7 @@ const Budaya = () => {
               <p className="text-[10px] tracking-widest uppercase font-bold opacity-80">{t('budayaPage.ritual.sekatenSub')}</p>
             </div>
           </div>
-          <div>
+          <div className="reveal-on-scroll fade-in-right">
             <p className="text-[#8b6112] text-xs font-bold tracking-[0.2em] uppercase mb-4">
               {t('budayaPage.ritual.badge')}
             </p>

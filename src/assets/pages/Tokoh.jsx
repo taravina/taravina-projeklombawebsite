@@ -24,7 +24,7 @@ const Tokoh = () => {
       });
     }, observerOptions);
 
-    const sections = document.querySelectorAll('.animate-section');
+    const sections = document.querySelectorAll('.animate-section, .reveal-on-scroll');
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
@@ -85,10 +85,10 @@ const Tokoh = () => {
             <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[76px] font-bold text-[#5e2b0f] leading-tight mb-8">
               {t('tokohPage.hero.title')}
             </h1>
-            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-lg mb-10">
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-lg mb-10 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.2s' }}>
               {t('tokohPage.hero.desc')}
             </p>
-            <div className="w-24 h-[2px] bg-[#D2C5B8]"></div>
+            <div className="w-24 h-[2px] bg-[#D2C5B8] reveal-on-scroll fade-in-left" style={{ transitionDelay: '0.4s' }}></div>
           </div>
 
           <div className="w-full lg:w-1/2 flex justify-center text-center">
@@ -161,7 +161,7 @@ const Tokoh = () => {
           </div>
 
           <div className="w-full lg:w-7/12 pt-4">
-            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block reveal-on-scroll fade-in-up">
               {hb1.tag}
             </span>
             <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10">
@@ -241,13 +241,13 @@ const Tokoh = () => {
           </div>
 
           <div className="w-full lg:w-7/12 pt-4">
-            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block reveal-on-scroll fade-in-up">
               {hb2.tag}
             </span>
-            <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10">
+            <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
               {hb2.title}
             </h2>
-            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-12 max-w-2xl font-sans">
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-12 max-w-2xl font-sans reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.2s' }}>
               {hb2.desc}
             </p>
 
@@ -320,13 +320,13 @@ const Tokoh = () => {
           </div>
 
           <div className="w-full lg:w-7/12 pt-4">
-            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block reveal-on-scroll fade-in-up">
               {hb3.tag}
             </span>
-            <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10">
+            <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
               {hb3.title}
             </h2>
-            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-12 max-w-2xl font-sans">
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-12 max-w-2xl font-sans reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.2s' }}>
               {hb3.desc}
             </p>
 
@@ -399,13 +399,13 @@ const Tokoh = () => {
           </div>
 
           <div className="w-full lg:w-7/12 pt-4">
-            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-[#8B6112] font-bold text-[12px] md:text-[14px] tracking-[0.2em] uppercase mb-4 block reveal-on-scroll fade-in-up">
               {hb4.tag}
             </span>
-            <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10">
+            <h2 className="font-serif text-[40px] md:text-[56px] lg:text-[68px] font-bold text-[#5e2b0f] leading-tight mb-10 reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.1s' }}>
               {hb4.title}
             </h2>
-            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-12 max-w-2xl font-sans">
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed mb-12 max-w-2xl font-sans reveal-on-scroll fade-in-up" style={{ transitionDelay: '0.2s' }}>
               {hb4.desc}
             </p>
 

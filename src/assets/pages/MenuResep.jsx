@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from "../../context/LanguageContext";
@@ -18,6 +18,27 @@ const MenuResep = () => {
     }
     return () => { document.body.style.overflow = 'unset'; };
   }, [selectedRecipe]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const recipeImages = {
     1: '/gudeg.png',
@@ -193,7 +214,7 @@ const MenuResep = () => {
         </div>
 
         {/* Dynamic Heading */}
-        <h2 className="text-[56px] md:text-[68px] font-serif font-bold text-[#201008] mb-16 tracking-tight">
+        <h2 className="text-[56px] md:text-[68px] font-serif font-bold text-[#201008] mb-16 tracking-tight reveal-on-scroll fade-in-up">
           {activeFilter === 'Semua' ? t('menuResepPage.grid.all') : t('menuResepPage.grid.popular')}
         </h2>
 
@@ -202,7 +223,7 @@ const MenuResep = () => {
           {filteredRecipes.map((recipe) => (
             <div
               key={recipe.id}
-              className="bg-white rounded-[24px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-700 flex flex-col h-full group"
+              className="bg-white rounded-[24px] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-700 flex flex-col h-full group reveal-on-scroll fade-in-up"
             >
               {/* Image Container */}
               <div className="aspect-[4/3] overflow-hidden relative">

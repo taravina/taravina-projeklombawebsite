@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -6,6 +6,27 @@ const DestinasiDetail = () => {
   const { slug } = useParams();
   const { t } = useLanguage();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-animation');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   // Get data from translations - Fallback to vredeburg if slug is invalid
   const detailData = t(`destinasiPage.destinasiDetails.${slug}`) || t('destinasiPage.destinasiDetails.vredeburg');
@@ -41,8 +62,8 @@ const DestinasiDetail = () => {
       </div>
 
       {/* 3. Main Info Card (Floating at the bottom) */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[90%] max-w-[1280px] z-30">
-        <div className="bg-[#FAF9F6]/95 backdrop-blur-xl rounded-[40px] shadow-2xl p-8 md:p-12 border border-white/50 animate-slide-up">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[90%] max-w-[1280px] z-30 reveal-on-scroll fade-in-up">
+        <div className="bg-[#FAF9F6]/95 backdrop-blur-xl rounded-[40px] shadow-2xl p-8 md:p-12 border border-white/50">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center">
             
