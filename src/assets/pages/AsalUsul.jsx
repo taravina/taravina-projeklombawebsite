@@ -19,6 +19,7 @@ const AsalUsul = () => {
             ...prev,
             [entry.target.id]: true,
           }));
+          entry.target.classList.add('active-animation');
           observer.unobserve(entry.target);
         }
       });
