@@ -34,12 +34,12 @@ const AsalUsul = () => {
     <div className="min-h-screen bg-[#FDFBF9] overflow-x-hidden">
 
       {/* Hero Section - Mirroring the User's Image Design */}
-      <section 
-        id="hero" 
+      <section
+        id="hero"
         className="px-8 md:px-16 pt-24 md:pt-32 pb-24 md:pb-40 animate-section"
       >
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           {/* Left Content */}
           <div className="reveal-on-scroll fade-in-left">
             <span className="text-[#8B6112] font-bold text-sm tracking-[0.3em] uppercase mb-8 block">
@@ -67,12 +67,12 @@ const AsalUsul = () => {
           {/* Right Content - Visual Frame */}
           <div className="relative reveal-on-scroll fade-in-right" style={{ transitionDelay: '0.4s' }}>
             <div className="relative z-10 bg-white p-4 shadow-[0_30px_60px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group">
-              <img 
-                src="/giyanti_archway.png" 
+              <img
+                src="/giyanti_archway.png"
                 alt="Perjanjian Giyanti Archway"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              
+
               {/* Year Badge - Glassmorphism style */}
               <div className="absolute bottom-10 left-0 bg-[#D97736]/90 backdrop-blur-md p-6 md:p-8 min-w-[200px] shadow-2xl">
                 <span className="block text-[48px] md:text-[64px] font-bold text-white leading-none mb-1">
@@ -83,7 +83,7 @@ const AsalUsul = () => {
                 </span>
               </div>
             </div>
-            
+
             {/* Background elements to match the "premium" vibe */}
             <div className="absolute top-1/2 -right-12 w-24 h-24 bg-[#8B6112]/10 rounded-full -z-10 animate-pulse"></div>
             <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#F5E6D3]/30 -z-10 transform rotate-12"></div>
@@ -92,8 +92,8 @@ const AsalUsul = () => {
       </section>
 
       {/* Philosophy Section */}
-      <section 
-        id="philosophy" 
+      <section
+        id="philosophy"
         className="px-8 md:px-16 py-24 md:py-32 bg-[#F7F2ED] animate-section"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -105,7 +105,7 @@ const AsalUsul = () => {
               <p className="text-gray-600 text-[18px] leading-relaxed mb-12 max-w-xl">
                 {t('asalUsulPage.philosophy.desc')}
               </p>
-              
+
               <div className="space-y-8">
                 {t('asalUsulPage.philosophy.items').map((item, i) => (
                   <div key={i} className="flex gap-6 border-l-4 border-[#8B6112] pl-8">
@@ -117,12 +117,12 @@ const AsalUsul = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative reveal-on-scroll zoom-in" style={{ transitionDelay: '0.3s' }}>
               <div className="aspect-square bg-[#EADCCB] rounded-full overflow-hidden p-12">
                 <div className="w-full h-full rounded-full overflow-hidden border-8 border-white shadow-inner">
-                  <img 
-                    src="/yogyahero.png" 
+                  <img
+                    src="/yogyahero.png"
                     alt="Yogyakarta Philosophy"
                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                   />
@@ -134,8 +134,8 @@ const AsalUsul = () => {
       </section>
 
       {/* History Detail Section */}
-      <section 
-        id="history" 
+      <section
+        id="history"
         className="px-8 md:px-16 py-24 md:py-32 animate-section"
       >
         <div className="max-w-4xl mx-auto text-center">
@@ -155,20 +155,20 @@ const AsalUsul = () => {
       </section>
 
       {/* Palihan Nagari: Perjanjian Giyanti Section */}
-      <section 
-        id="giyanti" 
+      <section
+        id="giyanti"
         className="px-8 md:px-16 py-24 md:py-40 bg-white animate-section overflow-hidden"
       >
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-            
+
             {/* Left Content: Text & Quote */}
             <div className="reveal-on-scroll fade-in-left">
               <div className="w-32 h-[2px] bg-[#8B6112]/30 mb-12"></div>
               <h2 className="font-serif text-[44px] md:text-[60px] lg:text-[72px] font-bold text-[#5E2B0F] leading-[1.1] mb-12">
                 {t('asalUsulPage.giyanti.title')}
               </h2>
-              
+
               <div className="space-y-8 mb-16">
                 <p className="text-[#6B5A4E] text-[18px] md:text-[20px] leading-relaxed font-sans opacity-95">
                   {t('asalUsulPage.giyanti.desc1')}
@@ -192,8 +192,8 @@ const AsalUsul = () => {
                 {/* Archival Image Frame */}
                 <div className="bg-[#FAF7F2] p-4 md:p-6 shadow-2xl border border-[#EADCCB]">
                   <div className="overflow-hidden aspect-[4/3] bg-[#EADCCB]">
-                    <img 
-                      src="/giyanti_signing.png" 
+                    <img
+                      src="/giyanti_signing.png"
                       alt="Archival Giyanti Signing"
                       className="w-full h-full object-cover grayscale sepia-[0.3] brightness-90 contrast-110 transition-transform duration-1000 group-hover:scale-105"
                     />
@@ -235,14 +235,13 @@ const AsalUsul = () => {
           {/* Main Interactive Banner */}
           <div className="w-full max-w-[1240px] mb-20 relative overflow-hidden rounded-[40px] shadow-3xl aspect-[21/9] md:aspect-[21/7] reveal-on-scroll zoom-in" style={{ transitionDelay: '0.2s' }}>
             {Object.keys(t('asalUsulPage.philosophySpace.items')).map((key) => (
-              <div 
+              <div
                 key={key}
-                className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                  activePhilosophy === key ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
-                }`}
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out ${activePhilosophy === key ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
+                  }`}
               >
-                <img 
-                  src={t(`asalUsulPage.philosophySpace.items.${key}.image`)} 
+                <img
+                  src={t(`asalUsulPage.philosophySpace.items.${key}.image`)}
                   alt={t(`asalUsulPage.philosophySpace.items.${key}.title`)}
                   className="w-full h-full object-cover brightness-[0.85] contrast-[1.05]"
                 />
@@ -265,17 +264,17 @@ const AsalUsul = () => {
               { id: 'keraton', icon: 'M3 10V21H21V10L12 2L3 10ZM12 5.5L19 11.75V19H5V11.75L12 5.5ZM10 13H14V17H10V13Z' },
               { id: 'sea', icon: 'M3 12c4 0 4 4 9 4s5-4 9-4M3 16c4 0 4 4 9 4s5-4 9-4' }
             ].map((item) => (
-              <div 
+              <div
                 key={item.id}
                 onClick={() => setActivePhilosophy(item.id)}
                 className={`group p-12 rounded-[32px] cursor-pointer transition-all duration-700 flex flex-col items-center text-center
-                  ${activePhilosophy === item.id 
-                    ? 'bg-white shadow-[0_40px_80px_rgba(0,0,0,0.08)] border border-[#EADCCB] -translate-y-4' 
+                  ${activePhilosophy === item.id
+                    ? 'bg-white shadow-[0_40px_80px_rgba(0,0,0,0.08)] border border-[#EADCCB] -translate-y-4'
                     : 'bg-white/40 border border-transparent hover:bg-white hover:shadow-xl hover:-translate-y-2'}`}
               >
                 <div className={`w-20 h-20 rounded-[24px] flex items-center justify-center mb-8 transition-all duration-700
-                  ${activePhilosophy === item.id 
-                    ? 'bg-[#5E2B0F] text-[#D97736] rotate-[360deg] shadow-lg' 
+                  ${activePhilosophy === item.id
+                    ? 'bg-[#5E2B0F] text-[#D97736] rotate-[360deg] shadow-lg'
                     : 'bg-white text-[#8B6112] shadow-sm rotate-0'}`}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-10 h-10">
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
