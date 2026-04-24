@@ -4,6 +4,8 @@ import { useLanguage } from '../../context/LanguageContext';
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -96,8 +98,10 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Language Switcher */}
-        <div className="relative flex bg-gray-100/90 backdrop-blur-md p-1 rounded-full items-center shadow-inner border border-gray-200/50 scale-90 md:scale-100 overflow-hidden w-[280px]">
+        {/* Right side tools */}
+        <div className="flex items-center gap-4">
+          {/* Language Switcher */}
+          <div className="hidden md:flex relative bg-gray-100/90 backdrop-blur-md p-1 rounded-full items-center shadow-inner border border-gray-200/50 scale-90 md:scale-100 overflow-hidden w-[280px]">
           {/* Sliding Pill Background using Translate for absolute precision */}
           <div 
             className={`absolute top-1 bottom-1 w-[calc(50%-4px)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] bg-[#7A3E14] rounded-full shadow-lg ${
@@ -126,6 +130,100 @@ const Navbar = () => {
           >
             ENGLISH
           </button>
+          </div>
+
+          {/* Burger Menu Button */}
+          <button 
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg border border-gray-200 bg-white text-[#7A3E14] focus:outline-none z-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <span className={`bg-[#7A3E14] block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm ${isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
+            <span className={`bg-[#7A3E14] block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm my-0.5 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`bg-[#7A3E14] block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'}`}></span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div 
+        className={`md:hidden absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-in-out overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-[calc(100vh-80px)] opacity-100 py-4 overflow-y-auto' : 'max-h-0 opacity-0 py-0'
+        }`}
+      >
+        <div className="flex flex-col px-6 gap-2">
+          {links.map((link) => {
+            const active = isLinkActive(link.path);
+            return (
+              <div key={link.name} className="flex flex-col">
+                <div className="flex items-center justify-between">
+                  <NavLink
+                    to={link.path}
+                    onClick={() => {
+                      if (!link.hasDropdown) setIsMobileMenuOpen(false);
+                    }}
+                    className={`text-[16px] font-medium py-3 w-full border-b border-gray-50 transition-colors ${
+                      active ? 'text-[#D97736]' : 'text-gray-600 hover:text-[#D97736]'
+                    }`}
+                  >
+                    {link.name}
+                  </NavLink>
+                  {link.hasDropdown && (
+                    <button 
+                      onClick={() => setOpenMobileDropdown(openMobileDropdown === link.name ? null : link.name)}
+                      className="p-3 text-gray-500 focus:outline-none"
+                    >
+                      <svg className={`w-5 h-5 transition-transform duration-300 ${openMobileDropdown === link.name ? 'rotate-180 text-[#D97736]' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                  )}
+                </div>
+                
+                {link.hasDropdown && (
+                  <div className={`flex flex-col overflow-hidden transition-all duration-300 ease-in-out ${openMobileDropdown === link.name ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="bg-gray-50 rounded-xl p-3 mt-2 mb-2 border border-gray-100">
+                      {link.subLinks.map((sub) => (
+                        <NavLink
+                          key={sub.name}
+                          to={sub.path}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block px-4 py-3 text-[14px] font-medium text-gray-600 hover:text-[#D97736] hover:bg-white rounded-lg transition-colors"
+                        >
+                          {sub.name}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          {/* Mobile Language Switcher */}
+          <div className="mt-6 pt-6 border-t border-gray-100 pb-4">
+            <p className="text-xs text-gray-400 mb-3 font-bold uppercase tracking-widest">{t('navbar.language', 'Language / Bahasa')}</p>
+            <div className="flex gap-3">
+              <button 
+                onClick={() => { setLanguage('ID'); setIsMobileMenuOpen(false); }}
+                className={`flex-1 py-3 rounded-xl text-sm font-bold tracking-wider transition-all duration-300 shadow-sm ${
+                  language === 'ID' 
+                    ? 'bg-[#7A3E14] text-white shadow-md transform scale-[1.02]' 
+                    : 'bg-gray-50 text-gray-500 hover:bg-gray-100 border border-gray-200'
+                }`}
+              >
+                INDONESIA
+              </button>
+              <button 
+                onClick={() => { setLanguage('EN'); setIsMobileMenuOpen(false); }}
+                className={`flex-1 py-3 rounded-xl text-sm font-bold tracking-wider transition-all duration-300 shadow-sm ${
+                  language === 'EN' 
+                    ? 'bg-[#7A3E14] text-white shadow-md transform scale-[1.02]' 
+                    : 'bg-gray-50 text-gray-500 hover:bg-gray-100 border border-gray-200'
+                }`}
+              >
+                ENGLISH
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
