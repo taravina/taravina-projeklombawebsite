@@ -5,6 +5,7 @@ import { useLanguage } from '../../context/LanguageContext';
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
@@ -124,28 +125,20 @@ const Navbar = () => {
           >
             ENGLISH
           </button>
-        </div>
+          </div>
 
-        {/* Mobile Burger Menu Button */}
-        <button 
-          onClick={toggleMenu}
-          className="md:hidden z-50 p-2 text-[#7A3E14] focus:outline-none transition-transform active:scale-95"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          )}
-        </button>
-      </div>
+          {/* Burger Menu Button */}
+          <button 
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg border border-gray-200 bg-white text-[#7A3E14] focus:outline-none z-[60]"
+            onClick={toggleMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <span className={`bg-[#7A3E14] block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
+            <span className={`bg-[#7A3E14] block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`bg-[#7A3E14] block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : 'translate-y-1'}`}></span>
+          </button>
+        </div>
+    
 
       {/* Mobile Menu Backdrop */}
       <div 
