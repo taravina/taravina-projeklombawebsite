@@ -269,7 +269,7 @@ const Home = () => {
                 <div className="inline-block bg-[#8b6112] text-white text-[10px] font-bold px-3 py-1 mb-4 self-start tracking-widest rounded-sm">{t('home.destination.center')}</div>
                 <h3 className="text-white text-3xl md:text-5xl font-serif mb-4">{t('home.destination.malioboro')}</h3>
                 <p className="text-gray-300 text-sm md:text-base max-w-md mb-8 leading-relaxed">{t('home.destination.malioboroDesc')}</p>
-                <button className="bg-white text-[#5e2b0f] text-[11px] font-bold px-8 py-3.5 self-start uppercase tracking-widest hover:bg-[#8b6112] hover:text-white transition-all duration-300">{t('home.destination.directions')}</button>
+                {/* <button className="bg-white text-[#5e2b0f] text-[11px] font-bold px-8 py-3.5 self-start uppercase tracking-widest hover:bg-[#8b6112] hover:text-white transition-all duration-300">{t('home.destination.directions')}</button> */}
               </div>
             </div>
 

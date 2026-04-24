@@ -52,9 +52,9 @@ const Destinasi = () => {
             <p className="text-gray-200 text-[18px] md:text-[20px] max-w-xl leading-relaxed mb-12 animate-fade-in-delayed">
               {t('destinasiPage.hero.desc')}
             </p>
-            <button className="px-10 py-5 bg-[#5E2B0F] hover:bg-[#4A220C] text-white font-serif text-[18px] tracking-widest uppercase transition-all duration-300 shadow-xl hover:shadow-2xl animate-fade-in-delayed">
+            {/* <button className="px-10 py-5 bg-[#5E2B0F] hover:bg-[#4A220C] text-white font-serif text-[18px] tracking-widest uppercase transition-all duration-300 shadow-xl hover:shadow-2xl animate-fade-in-delayed">
               {t('destinasiPage.hero.button')}
-            </button>
+            </button> */}
           </div>
         </div>
 

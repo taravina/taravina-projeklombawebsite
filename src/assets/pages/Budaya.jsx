@@ -52,12 +52,12 @@ const Budaya = () => {
           <p className="text-gray-100 text-sm md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md animate-fade-in delay-200">
             {t('budayaPage.hero.desc')}
           </p>
-          <a 
+          {/* <a 
             href="#tradisi" 
             className="inline-block bg-[#7A3E14] hover:bg-[#5E2B0F] text-white px-10 py-4 rounded-sm text-sm font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 shadow-xl animate-bounce-subtle"
           >
             {t('budayaPage.hero.button')}
-          </a>
+          </a> */}
         </div>
         
         {/* Subtle Bottom Gradient */}
@@ -253,7 +253,7 @@ const Budaya = () => {
       </section>
 
       {/* Footer-like CTA */}
-      <section 
+      {/* <section 
         className="w-full py-24 text-center px-6 bg-cover bg-center relative overflow-hidden"
         style={{ backgroundImage: "url('/Gradient.png')" }}
       >
@@ -272,7 +272,7 @@ const Budaya = () => {
              </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
